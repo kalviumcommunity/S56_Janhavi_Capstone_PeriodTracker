@@ -12,7 +12,7 @@ function Home() {
     <>
       <Navbar/>
       <div className="header">
-          <div className="image"><img src={image} width={830}/></div>
+          <div className="image"><img src={image} width={830} alt="calendar"/></div>
           <div className="slogan">
           <p>Sync Your Cycle, Explore Your World</p> 
           <p>Ms. Femmigo Guides Your Journey!</p>
@@ -20,7 +20,7 @@ function Home() {
           </div>
       </div>
       <div className="aboutus">
-        <img src={aboutbg} width={1473} />
+        <img src={aboutbg} width={1473}alt="women"/>
         <div className="text">
           <p>The website is a special tool made just for women. It helps them keep track of their menstrual cycle. The website also helps women plan their trips and decide where to go based on which part of their menstrual cycle they're in. Women can enjoy their travels more and feel comfortable throughout. The tracker part of the website is like a calendar that remembers each woman's cycle, so they don't have to. It sends reminders before important phases start, making it easier to plan. </p>
         </div>
@@ -28,7 +28,7 @@ function Home() {
       <div className="cards">
         <div className="symptoms">
           <h1>Period Symptoms</h1>
-          <img src={blood} width={200} />
+          <img src={blood} width={200} alt="blood" />
           <div className="symlist">
           <p> 1.Menstrual Cramps </p>
           <p> 2.Bloating </p>
@@ -45,7 +45,7 @@ function Home() {
         </div>
         <div className="cravings">
         <h1>Period Cravings</h1>
-        <img src={chocolate} width={200} />
+        <img src={chocolate} width={200} alt="chocolate" />
           <div className="cravlist">
           <p> 1.Chocolate </p>
           <p> 2.Salty snacks </p>
@@ -62,7 +62,7 @@ function Home() {
         </div>
         <div className="disorders">
         <h1>Period Disorders</h1>
-        <img src={pad} width={200}/>
+        <img src={pad} width={200} alt="sanitaryPad"/>
           <div className="dislist">
             <p> 1.Dysmenorrhea </p>
             <p> 2.Amenorrhea </p>
