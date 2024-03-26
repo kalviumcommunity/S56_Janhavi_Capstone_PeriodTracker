@@ -6,6 +6,7 @@ import aboutbg from "../assets/aboutbg.png";
 import blood from "../assets/blood.png";
 import chocolate from "../assets/chocolate.png";
 import pad from "../assets/pad.png";
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -16,7 +17,7 @@ function Home() {
           <div className="slogan">
           <p>Sync Your Cycle, Explore Your World</p> 
           <p>Ms. Femmigo Guides Your Journey!</p>
-          <button>Login</button>
+          <Link to='/login'><button>Login</button></Link>
           </div>
       </div>
       <div className="aboutus">
@@ -41,7 +42,7 @@ function Home() {
           <p> 9.Back Pain </p>
           <p> 10.Nausea </p>  
           </div>
-            <button className='learnMoresym'>Learn More</button>
+            <Link to='/learnmore'><button className='learnMoresym'>Learn More</button></Link>
         </div>
         <div className="cravings">
         <h1>Period Cravings</h1>
@@ -58,7 +59,7 @@ function Home() {
           <p> 9.Pizza </p>
           <p> 10.Cookies </p>
           </div>
-            <button className='learnMorecrav'>Learn More</button>
+          <Link to='/learnmore'><button className='learnMorecrav'>Learn More</button></Link>
         </div>
         <div className="disorders">
         <h1>Period Disorders</h1>
@@ -74,7 +75,7 @@ function Home() {
             <p> 8.Fibroids </p>
             <p> 9.Irregular Menstrual Cycles </p>
           </div>
-            <button className='learnMoredis'>Learn More</button>
+          <Link to='/learnmore'><button className='learnMoredis'>Learn More</button></Link>
         </div>
       </div>
       <div className="footer">

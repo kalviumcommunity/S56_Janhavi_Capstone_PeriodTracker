@@ -1,6 +1,8 @@
 import React from 'react'
 import logo from '../assets/logo.png'
 import "./navbar.css";
+import { Link } from 'react-router-dom';
+
 
 function Navbar() {
   return (
@@ -10,8 +12,8 @@ function Navbar() {
             <div className="icons">
                 <h1>Period Tracker</h1>
                 <h1>Travel Planner</h1>
-                <h1>Home</h1>
-                <button>sign-up</button>
+                <Link to='/'><h1 id="main">Home</h1></Link> 
+                <Link to='/signin'><button>sign-up</button></Link>
             </div>
         </div>
     </div>

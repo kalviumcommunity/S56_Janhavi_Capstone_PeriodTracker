@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Katibeh&family=Playball&family=Poppins:wght@300&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 4px 4px 5px rgba(60, 60, 60, 0.542);
+}
+#logo{
+    width:16vw;
+    margin: 0.5vw;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+    width:20vw;
+}
+.home{
+    margin-top:1vw;
+    padding-bottom:0.65vw;
+    width:7vw;
+    height:3vw;
+    border-radius:2vw;
+    border-style: none;
+    background-color: #C92B8A;
+    color:white;
+    font-size:30px;
+    font-family: "Katibeh", serif;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.844);
+    cursor: pointer;
+}
+.home:hover{
+    background-color: #d1034e;
+}
+.home:active{
+    background-color: #ff015e;
+}
+.log{
+    margin-top:1vw;
+    margin-right:3vw;
+    padding-bottom:3vw;
+    width:7vw;
+    height:3vw;
+    border-radius:2vw;
+    border-style: none;
+    background-color:#FF4646;
+    color:white;
+    font-size:30px;
+    font-family: "Katibeh", serif;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.844);
+    cursor: pointer;
+}
+.log:hover{
+    background-color: #d00202;
+}
+.log:active{
+    background-color: #ff0101;
+}
+
+.Sign{
+    margin:3.2vw 0vw 1vw 17vw;
+}
+#calendar{
+    width:37vw;
+    box-shadow: 4px 4px 5px rgba(37, 36, 36, 0.827);
+}
+.Signin{
+    position:absolute;
+    top:10.75vw;
+    left:54vw;
+    width:35vw;
+    height:74.1vh;
+    background-color: #c92b8acc;
+    box-shadow: 4px 4px 5px rgba(37, 36, 36, 0.827);
+}
+.Signin p{
+    margin:2vw 1vw 0vw 1vw;
+    font-size:27px;
+    font-family:  "Katibeh", serif;
+    text-align: center;
+}
+.Signin h1{
+    text-align: center;
+    font-family:  "Katibeh", serif;
+    font-size:40px;
+}
+.username, .pass, .age{
+    background-color:#FFAAD2;
+    font-family:  "Poppins", sans-serif;
+    margin:3vw 5vw 1vw 5vw;
+    padding-left:0.75vw;
+    padding-top:0.35vw;
+    padding-bottom:0.5vw;
+    border-radius: 2vw;
+    font-size:10px;
+}
+.username input{
+ position: absolute;
+ top:11vw;
+ left:9.5vw;
+ background-color: #FFAAD2;
+ width:19vw;
+ height:3vh;
+ border-style: none;
+}
+.pass input{
+    position: absolute;
+    top:16.25vw;
+    left:11vw;
+    background-color: #FFAAD2;
+    width:18vw;
+    height:3vh;
+    border-style: none;
+   }
+   .age input{
+    position: absolute;
+    top:21.75vw;
+    left:8.5vw;
+    background-color: #FFAAD2;
+    width:20vw;
+    height:3vh;
+    border-style: none;
+   }
+.logbtn{
+    margin-top:1vw;
+    margin-left:12vw;
+    padding-bottom:2.75vw;
+    width:10vw;
+    height:4vh;
+    border-radius:2vw;
+    font-size: 26px;
+    font-family:  "Katibeh", serif;
+    border-style: none;
+    background-color: #FF4646;
+    color:white;
+    box-shadow: 4px 4px 5px rgba(42, 42, 42, 0.827);
+    cursor: pointer;
+}
+.logbtn:hover{
+    background-color: #c70404;
+}
+.logbtn:active{
+    background-color: #ff0404;
+}
