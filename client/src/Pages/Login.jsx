@@ -18,10 +18,10 @@ function Login() {
             <p>Continue your journey to explore the world boldly with</p>
             <h1>Ms Femmigo</h1>
             <div className="name">
-             <p>Name:</p><input type="text"  />
+             <label>Name:</label><input type="text"  />
             </div>
             <div className="password">
-             <p>Password:</p><input/>
+              <label>Password:</label><input/>
             </div>
             <button className='logbtn'>Login</button>
           </div>

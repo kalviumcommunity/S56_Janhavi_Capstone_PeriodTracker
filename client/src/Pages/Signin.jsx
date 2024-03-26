@@ -20,13 +20,13 @@ function Signin() {
             <p>Continue your journey to explore the world boldly with</p>
             <h1>Ms Femmigo</h1>
             <div className="username">
-             <h2>Name:</h2><input type="text"  />
+             <label>Name:</label><input type="text"  />
             </div>
             <div className="pass">
-             <h2>Password:</h2><input/>
+            <label>Password:</label><input/>
             </div>
             <div className="age">
-             <h2>Age:</h2><input type="number"/>
+             <label>Age:</label><input type="number"/>
             </div>
             <button className='logbtn'>Sign-Up</button>
             <p>If you are already signed in, please login!</p>

@@ -97,33 +97,11 @@
     border-radius: 2vw;
     font-size:10px;
 }
-.username input{
- position: absolute;
- top:11vw;
- left:9.5vw;
+.username input, .pass input, .age input{
  background-color: #FFAAD2;
- width:19vw;
- height:3vh;
  border-style: none;
 }
-.pass input{
-    position: absolute;
-    top:16.25vw;
-    left:11vw;
-    background-color: #FFAAD2;
-    width:18vw;
-    height:3vh;
-    border-style: none;
-   }
-   .age input{
-    position: absolute;
-    top:21.75vw;
-    left:8.5vw;
-    background-color: #FFAAD2;
-    width:20vw;
-    height:3vh;
-    border-style: none;
-   }
+
 .logbtn{
     margin-top:1vw;
     margin-left:12vw;

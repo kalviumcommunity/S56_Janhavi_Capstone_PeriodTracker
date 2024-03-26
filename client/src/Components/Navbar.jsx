@@ -13,7 +13,7 @@ function Navbar() {
                 <h1>Period Tracker</h1>
                 <h1>Travel Planner</h1>
                 <Link to='/'><h1 id="main">Home</h1></Link> 
-                <Link to='/signin'><button>sign-up</button></Link>
+                <Link to='/login'><button>Login</button></Link>
             </div>
         </div>
     </div>
