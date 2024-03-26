@@ -32,7 +32,6 @@
 }
 .slogan button:hover{
     background-color:#0066ff;
-    border:4px solid rgb(148, 147, 147);
 }
 .slogan button:active{
     background-color:#ff0000;

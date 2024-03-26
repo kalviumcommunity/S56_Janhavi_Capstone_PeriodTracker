@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+}
+.intro,.conclusion{
+    margin:2vw 5vw 0vw 5vw;
+    padding:2vw 1vw 3vw 1vw;
+    text-align: center;
+}
+
+.intro H1, .conclusion H1{
+    font-family:"Abel", sans-serif;
+    font-size:50px;
+    font-weight:800;
+}
+.intro p, .conclusion p{
+    margin-top:1vw;
+    font-family:'Poppins', sans-serif ;
+      font-size:20px;
+}
+hr{
+   width:90%;
+   margin-left: 5vw;
+   height:1px;
+   background-color: rgb(64, 64, 64);
+}
+.symtext,.cravtext, .distext, .phastext{
+   margin: 2vw 2vw 0vw 2vw;
+   padding:0vw 1vw 3vw 1vw;
+   width: 70vw;
+}
+
+.symtext h1, .cravtext h1, .distext h1, .phastext h1{
+    text-align: center;
+    font-family:"Abel", sans-serif;
+    font-size:50px;
+    font-weight:800;
+}
+.symtext p, .cravtext p, .distext p, .phastext p{
+    margin-top:3vw;
+    font-family:'Poppins', sans-serif ;
+    font-size:15px;
+    line-height:0.1vw ;
+}
+.symptomss, .cravingss, .diseasess, .phases{
+    display: flex;
+    justify-content: space-between;
+}
+.symimage img{
+    margin:11vw 5vw 0vw 5vw;
+    width:30vw;
+}
+.cravimage img{
+    width:40vw;
+    margin: 11vw 8vw 0vw 0vw;
+}
+.disimage img{
+ width:30vw;
+ margin: 8vw 7vw 0vw 9vw;
+}
+.phasimage img{
+    width: 30vw;
+    margin: 8vw 7vw 0vw 4vw;
+}
+.footer{
+    background-color: black;
+    color:white;
+    
+}
