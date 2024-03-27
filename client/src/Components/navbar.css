@@ -5,36 +5,38 @@
     margin:0;
 }
 .nav{
-    padding:1vw;
+    padding:0.25vw;
     display: flex;
     justify-content: space-between;
    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
-   font-family: "Playball", cursive;
+   font-family: "Poppins", sans-serif;
+}
+#logo img{
+    width:17vw;
 }
 .icons{
     display: flex;
     justify-content: space-between;
     gap:7vw;
-    font-size:13px;
+    font-size:9px;
     margin-right:5vw;
     margin-top: 2vw;
     cursor: pointer;
    
 }
-#main{
+.icons h1{
     color:black;
     text-decoration: underline solid rgb(255, 255, 255);
 }
 .icons button{
     width:7vw;
-    padding-bottom:0.5vw;
     height:5vh;
     border-radius:2vw;
     border-style: none;
     background-color: #FF3D00;
     color:white;
-    font-size:22px;
-    font-family: "Playball", cursive;
+    font-size:18px;
+    font-family: "Poppins", sans-serif;
     cursor: pointer;
 }
 .icons button:hover{

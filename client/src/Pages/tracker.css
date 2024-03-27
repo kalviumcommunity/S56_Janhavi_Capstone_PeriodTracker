@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Playball&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+*{
+    margin:0;
+    padding:0;
+}
+.introduction{
+    text-align: center;
+    margin:3vw;
+}
+.introduction h1{
+
+    font-family: "Playball", cursive;
+    font-size:60px;
+}
+.introduction p{
+    font-family: "Poppins", sans-serif;
+    font-size:23px;
+    margin-top:1vw;
+    margin-right:2vw;
+}
+.questioncards{
+    margin-top:5vw;
+    display:flex;
+    justify-content: space-around;
+}
+.card1, .card2, .card3{
+background-color: #c92b8a9d;
+width:20vw;
+height:27vh;
+padding:2vw;
+border-radius: 2vw;
+box-shadow: 4px 4px 5px rgba(73, 73, 73, 0.814);
+text-align: center;
+}
+.card1 h3, .card2 h3, .card3 h3{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    margin-bottom:2vw;
+}
+.card1 input, .card2 input, .card3 input{
+    margin-top:1vw;
+    padding: 0vw 1vw 0.2vw 1vw;
+    width:12vw;
+    height:5vh;
+    border-radius: 1vw;
+    border: 2px solid #bc0494d9;
+}
+#track{
+    margin:5vw 0vw 3vw 42vw;
+    width:15vw;
+    height:7vh;
+    border-radius: 2vw;
+    font-family:  'Lilita One', sans-serif;
+    font-size:25px;
+    background-color: #FF6565;
+    border: 2px solid #FFB800;
+    color:White;
+    cursor: pointer;
+}
+#track:hover{
+    background-color: #fe4747;
+    border:3px solid #d89c02;
+}
+#track:active{
+    background-color: #fb2222;
+    border:3px solid #aaa800;
+}
+#cycle{
+    font-size: 55px;
+    font-family: "Abel", sans-serif;
+    text-align: center;
+    margin-top: 2vw;
+    padding:1vw;
+    background-color: #FFE4E4;
+}
+.prevnex{
+    margin:3vw 4vw 2vw 4vw;
+    display: flex;
+    justify-content: space-between;
+}
+#prev, #next{
+    width:15vw;
+    height:7vh;
+    border-radius: 2vw;
+    font-size:20px;
+    background-color: #FF6565;
+    border: 2px solid #FFB800;
+    color:White;
+    cursor: pointer;
+}
+.cycles{
+    display: flex;
+    justify-content: space-around;
+    font-family:  "Abel", sans-serif;
+    font-size:25px;
+    font-weight:500;
+    margin-top:5vw;
+}
+.footer{
+    margin-top:5vw;
+    background-color: black;
+    color:white;
+}
