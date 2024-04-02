@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../Components/Navbar';
 import Calendar from 'react-calendar';
 import './tracker.css';
@@ -12,6 +12,13 @@ function Tracker() {
   const [lutealPhaseDate, setLutealPhaseDate] = useState('');
   const [ovulationPhaseDate, setOvulationPhaseDate] = useState('');
   const [calendarDate, setCalendarDate] = useState(new Date());
+  const [showDates, setShowDates] = useState(false); 
+
+  useEffect(() => {
+    if (showDates) {
+      calculatePhaseDates();
+    }
+  }, [lastPeriodStart, periodDuration, cycleLength, showDates]);
 
   const handleLastPeriodStartChange = (e) => {
     setLastPeriodStart(e.target.value);
@@ -26,19 +33,25 @@ function Tracker() {
   };
 
   const calculatePhaseDates = () => {
-    const lastPeriodStartDate = new Date(lastPeriodStart);
-    const nextPeriodStartDate = new Date(lastPeriodStartDate);
-    nextPeriodStartDate.setDate(lastPeriodStartDate.getDate() + cycleLength);
+    if (lastPeriodStart && periodDuration && cycleLength) {
+      const lastPeriodStartDate = new Date(lastPeriodStart);
+      const nextPeriodStartDate = new Date(lastPeriodStartDate);
+      nextPeriodStartDate.setDate(lastPeriodStartDate.getDate() + cycleLength);
 
-    const menstrualPhaseDate = nextPeriodStartDate.toLocaleDateString('en-GB');
-    const follicularPhaseDate = new Date(nextPeriodStartDate.setDate(nextPeriodStartDate.getDate() + 5)).toLocaleDateString('en-GB');
-    const ovulationPhaseDate = new Date(nextPeriodStartDate.setDate(nextPeriodStartDate.getDate() + 9)).toLocaleDateString('en-GB');
-    const lutealPhaseDate = new Date(nextPeriodStartDate.setDate(nextPeriodStartDate.getDate() + 9)).toLocaleDateString('en-GB');
+      const menstrualPhaseDate = nextPeriodStartDate.toLocaleDateString('en-GB');
+      const follicularPhaseDate = new Date(nextPeriodStartDate.setDate(nextPeriodStartDate.getDate() + 5)).toLocaleDateString('en-GB');
+      const ovulationPhaseDate = new Date(nextPeriodStartDate.setDate(nextPeriodStartDate.getDate() + 9)).toLocaleDateString('en-GB');
+      const lutealPhaseDate = new Date(nextPeriodStartDate.setDate(nextPeriodStartDate.getDate() + 9)).toLocaleDateString('en-GB');
 
-    setMenstrualPhaseDate(menstrualPhaseDate);
-    setFollicularPhaseDate(follicularPhaseDate);
-    setOvulationPhaseDate(ovulationPhaseDate);
-    setLutealPhaseDate(lutealPhaseDate);
+      setMenstrualPhaseDate(menstrualPhaseDate);
+      setFollicularPhaseDate(follicularPhaseDate);
+      setOvulationPhaseDate(ovulationPhaseDate);
+      setLutealPhaseDate(lutealPhaseDate);
+    }
+  };
+
+  const handleTrackPeriod = () => {
+    setShowDates(true); 
   };
 
   const handleCalendarChange = (date) => {
@@ -46,19 +59,18 @@ function Tracker() {
   };
 
   const tileClassName = ({ date }) => {
-  const dateStr = date.toLocaleDateString('en-GB');
-  if (dateStr === menstrualPhaseDate) {
-    return 'menstrual-phase';
-  } else if (dateStr === follicularPhaseDate) {
-    return 'follicular-phase';
-  } else if (dateStr === ovulationPhaseDate) {
-    return 'ovulation-phase';
-  } else if (dateStr === lutealPhaseDate) {
-    return 'luteal-phase';
-  }
-  return '';
-};
-
+    const dateStr = date.toLocaleDateString('en-GB');
+    if (dateStr === menstrualPhaseDate) {
+      return 'menstrual-phase';
+    } else if (dateStr === follicularPhaseDate) {
+      return 'follicular-phase';
+    } else if (dateStr === ovulationPhaseDate) {
+      return 'ovulation-phase';
+    } else if (dateStr === lutealPhaseDate) {
+      return 'luteal-phase';
+    }
+    return '';
+  };
 
   return (
     <div>
@@ -81,23 +93,27 @@ function Tracker() {
           <input type="number" value={cycleLength} onChange={handleCycleLengthChange} />
         </div>
       </div>
-      <button id='track' onClick={calculatePhaseDates}>Track My Period</button>
+      <button id='track' onClick={handleTrackPeriod}>Track My Period</button>
       <h1 id='cycle'>Your Cycle</h1>
       <div className="prevnex">
         <button id='prev'>Previous 3 months</button>
         <button id='next'>Next 3 months</button>
       </div>
       {/* Display Phase Dates */}
-      <div className="cycles">
-        <h3>🔴Menstrual Phase: {menstrualPhaseDate}</h3>
-        <h3>🟠Follicular Phase: {follicularPhaseDate}</h3>
-        <h3>🟡Luteal Phase: {lutealPhaseDate}</h3>
-        <h3>🟢Ovulation Phase: {ovulationPhaseDate}</h3>
-      </div>
+      {showDates && (
+        <div className="cycles">
+          <h3>🔴Menstrual Phase: {menstrualPhaseDate}</h3>
+          <h3>🟠Follicular Phase: {follicularPhaseDate}</h3>
+          <h3>🟡Luteal Phase: {lutealPhaseDate}</h3>
+          <h3>🟢Ovulation Phase: {ovulationPhaseDate}</h3>
+        </div>
+      )}
       {/* Calendar Component */}
-      <div className="calendar-container">
-        <Calendar onChange={handleCalendarChange} value={calendarDate} tileClassName={tileClassName} />
-      </div>
+      {showDates && (
+        <div className="calendar-container">
+          <Calendar onChange={handleCalendarChange} value={calendarDate} tileClassName={tileClassName} />
+        </div>
+      )}
       <div className="footer">
         <h3>Made By Janhavi ❤️</h3>
       </div>
