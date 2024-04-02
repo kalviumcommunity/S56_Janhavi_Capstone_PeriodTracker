@@ -1,105 +1,223 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Playball&family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
-*{
-    margin:0;
-    padding:0;
-}
-.introduction{
-    text-align: center;
-    margin:3vw;
-}
-.introduction h1{
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.introduction {
+    text-align: center;
+    margin: 3vw;
+}
+
+.introduction h1 {
     font-family: "Playball", cursive;
-    font-size:60px;
+    font-size: 60px;
 }
-.introduction p{
-    font-family: "Poppins", sans-serif;
-    font-size:23px;
-    margin-top:1vw;
-    margin-right:2vw;
+
+.introduction p {
+    font-size: 23px;
+    margin-top: 1vw;
+    margin-right: 2vw;
 }
-.questioncards{
-    margin-top:5vw;
-    display:flex;
+
+.questioncards {
+    margin-top: 5vw;
+    display: flex;
     justify-content: space-around;
 }
-.card1, .card2, .card3{
-background-color: #c92b8a9d;
-width:20vw;
-height:27vh;
-padding:2vw;
-border-radius: 2vw;
-box-shadow: 4px 4px 5px rgba(73, 73, 73, 0.814);
-text-align: center;
+
+.card1,
+.card2,
+.card3 {
+    background-color: #c92b8a9d;
+    width: 20vw;
+    height: 27vh;
+    padding: 2vw;
+    border-radius: 2vw;
+    box-shadow: 4px 4px 5px rgba(73, 73, 73, 0.814);
+    text-align: center;
 }
-.card1 h3, .card2 h3, .card3 h3{
+
+.card1 h3,
+.card2 h3,
+.card3 h3 {
     font-size: 20px;
-    font-family: 'Poppins', sans-serif;
     font-weight: 550;
-    margin-bottom:2vw;
+    margin-bottom: 2vw;
 }
-.card1 input, .card2 input, .card3 input{
-    margin-top:1vw;
+
+.card1 input,
+.card2 input,
+.card3 input {
+    margin-top: 1vw;
     padding: 0vw 1vw 0.2vw 1vw;
-    width:12vw;
-    height:5vh;
+    width: 12vw;
+    height: 5vh;
     border-radius: 1vw;
     border: 2px solid #bc0494d9;
 }
-#track{
-    margin:5vw 0vw 3vw 42vw;
-    width:15vw;
-    height:7vh;
+
+#track {
+    margin: 5vw 0vw 3vw 42vw;
+    width: 15vw;
+    height: 7vh;
     border-radius: 2vw;
-    font-family:  'Lilita One', sans-serif;
-    font-size:25px;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 25px;
     background-color: #FF6565;
     border: 2px solid #FFB800;
-    color:White;
+    color: White;
     cursor: pointer;
 }
-#track:hover{
+
+#track:hover {
     background-color: #fe4747;
-    border:3px solid #d89c02;
+    border: 3px solid #d89c02;
 }
-#track:active{
+
+#track:active {
     background-color: #fb2222;
-    border:3px solid #aaa800;
+    border: 3px solid #aaa800;
 }
-#cycle{
+
+#cycle {
     font-size: 55px;
     font-family: "Abel", sans-serif;
     text-align: center;
     margin-top: 2vw;
-    padding:1vw;
+    padding: 1vw;
     background-color: #FFE4E4;
 }
-.prevnex{
-    margin:3vw 4vw 2vw 4vw;
+
+.prevnex {
+    margin: 3vw 4vw 2vw 4vw;
     display: flex;
     justify-content: space-between;
 }
-#prev, #next{
-    width:15vw;
-    height:7vh;
+
+#prev,
+#next {
+    width: 15vw;
+    height: 7vh;
     border-radius: 2vw;
-    font-size:20px;
+    font-size: 20px;
     background-color: #FF6565;
     border: 2px solid #FFB800;
-    color:White;
+    color: White;
     cursor: pointer;
 }
-.cycles{
+
+.cycles {
     display: flex;
-    justify-content: space-around;
-    font-family:  "Abel", sans-serif;
-    font-size:25px;
-    font-weight:500;
-    margin-top:5vw;
+    justify-content: space-between;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 5vw 3vw 0vw 3vw;
 }
-.footer{
-    margin-top:5vw;
+
+.calendar-container {
+    width: 70vw;
+    margin: 5vw auto;
+    max-width: 700px;
+    border-radius: 1vw;
+    box-shadow: 3px 3px 4px 4px rgba(26, 25, 25, 0.645);
+}
+
+.react-calendar {
+    font-size: 18px;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+    margin: 0.5vw 0vw 0.5vw 0vw;
+    text-align: center;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.react-calendar__navigation {
+    background-color: #c92b8a9d;
+    color: white;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 20px;
+    border-radius: 0.5vw;
+}
+
+.react-calendar__navigation button {
+    font-size: 30px;
+    background-color: #bd719f00;
+    border-style: none;
+    padding: 1vw;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+    background-color: #bc0494d9;
+    border-radius: 2vw;
+}
+
+.react-calendar__navigation button[disabled] {
+    background-color: #c92b8a9d;
+    opacity: 0.4;
+}
+
+.react-calendar__tile {
+    padding: 1vw;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.react-calendar__tile:active {
+    background-color: #FF6565;
+    color: white;
+}
+
+.react-calendar__tile--now {
+    background-color: #ffc0c0;
+    color: black;
+}
+
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+    background-color: #fe4747;
+    border: 2px solid #d89c02;
+}
+
+.react-calendar__tile--hasActive:enabled:active {
+    background-color: #fb2222;
+    border: 2px solid #aaa800;
+}
+.menstrual-phase {
+    background-color: #fc3131 !important; 
+    color: black !important;
+  }
+  
+  .follicular-phase {
+    background-color: #e1671a !important;
+    color: black !important;
+  }
+  
+  .ovulation-phase {
+    background-color: #e0ba11 !important; 
+    color: black !important;
+  }
+  
+  .luteal-phase {
+    background-color: #1eb300 !important; 
+    color: black !important;
+  }
+  
+.footer {
+    margin-top: 5vw;
     background-color: black;
-    color:white;
+    color: white;
 }
+
