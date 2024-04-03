@@ -3,57 +3,51 @@
     margin:0;
     padding:0;
 }
-.currphase img{
-    margin:2vw 2vw 0vw 3vw;
-    width:40vw;
-}
-.currphasetext{
-    position: absolute;
-    top:26vw;
-    left:18vw;
-    width:10vw;
+.introduce{
+    width: 60vw;
     text-align: center;
-    font-size:17px;
+    background-color: rgba(255, 228, 196, 0.708);
+    box-shadow: 5px 5px 6px rgba(49, 49, 49, 0.745);
+    margin:7vw 17vw 5vw 17vw;
+    padding:3vw;  
 }
-.notifications{
-    background-color: #6353858b;
-    margin:0vw 2vw 2vw 3vw;
-    padding:2vw 2vw 2vw 0vw;
-    width:40vw;
-    border-radius: 3vw;
-    box-shadow: 4px 4px 5px rgba(47, 47, 47, 0.704);
-    text-align: center;
-}
-.notifications h1{
-    font-family: "Inter", sans-serif;
-    margin-bottom:2vw;
-    font-size:45px;
-}
-.notifications p{
-    font-family: "Inter", sans-serif;
-    font-weight: 200;
-    font-size:25px;
-    margin-bottom:2vw;
-}
-.notifications h3{
-    font-family: "Inter", sans-serif;
-    margin-bottom:2vw;
-    font-size:27px;
+.introduce h1{
+    margin-bottom:1vw;
+    font-size: 37px;
+    font-family: 'Lilita One', sans-serif;
     font-weight: 500;
+    text-shadow: 2px 3px rgb(255, 123, 0);
 }
-.notifications button{
-    background-color: #FF3D00;
-    color:white;
-    width:10vw;
-    height:5vh;
-    border-radius: 1vw;
-    border-style: none;
+.introduce p{
+    margin-top:2vw;
+   line-height: 2.5vw;
+   font-size: 18px;
+}
+.yourphase{
+    background-color: rgba(255, 51, 0, 0.378);
+    padding:1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.yourphase label{
+    font-size: 35px;
+    margin-top:-1vw;
+}
+#phaseSelect{
+    width: 10vw;
+    height: 5vh;
+    padding:0.25vw 0vw 0.5vw 0.5vw;
+    border: 1px solid rgb(255, 106, 180);
     font-size: 20px;
+    font-family: "Abel", sans-serif;
 }
-.dropdown h3{
-    position: absolute;
-    top:10vw;
-    left:57vw;
+#option{
+    background: rgba(246, 221, 235, 0.586);
+}
+.activities h3{
     font-family: "Inter", sans-serif;
-    font-size: 17px;
+    font-size: 20px;
+    text-align: center;
+    margin:3vw;
 }

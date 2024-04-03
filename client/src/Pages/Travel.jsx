@@ -1,28 +1,30 @@
-import React from 'react'
-import Navbar from '../Components/Navbar'
-import currphase from "../assets/currphase.jpg"
-import "./travel.css"
+import React from "react";
+import Navbar from "../Components/Navbar";
+import "./travel.css";
 function Travel() {
+  const phases = ["luteal", "menstrual", "ovulation", "follicular"];
   return (
     <div>
-     <Navbar/>
-     <div className="currphase">
-        <img src={currphase} alt="currentPhase" />
-       <div className="currphasetext"><h1>Menstrual Phase</h1></div>
-     </div>
-     <div className="notifications">
-        <h1>Notifications And Remainders!</h1>
-        <p>Your Follicular Phase is in 5 days! </p>
-        <p>Your Ovulation Phase is in 10 days! </p>
-        <p>Your Luteal Phase is in 15 days! </p>
-        <h3>To learn more about your phases click on learn more</h3>
-        <button>Learn More</button>
-     </div>
-     <div className="dropdown">
-        <h3>Places you can visit with activities according to your phase.</h3>
-     </div>
+      <Navbar />
+        <div className="introduce">
+          <h1>Celebrate Every Phase, Explore Every Day!</h1>
+          <p>Have you ever felt like you wanted to have fun and go out, but your periods were getting in the way? Well, at Ms. Femmigo, we totally get it. That's why we do more than just track your period. With Ms. Femmigo, you can easily plan activities based on your cycle. We think every woman should enjoy life to the max, without periods holding them back. So don't let your periods stop you; embrace them with Ms. Femmigo and live life without limits!</p>
+        </div>
+        <div className="yourphase">
+          <label htmlFor="phaseSelect">Select Phase:</label>
+          <select id="phaseSelect">
+            {phases.map((phase, index) => (
+              <option id="option" key={index} value={phase}>
+                {phase}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="activities">
+          <h3>Activities you can do according to your phase.</h3>
+        </div>
     </div>
-  )
+  );
 }
 
-export default Travel
+export default Travel;
