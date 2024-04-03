@@ -94,25 +94,16 @@ body {
     padding: 1vw;
     background-color: #FFE4E4;
 }
-
-.prevnex {
-    margin: 3vw 4vw 2vw 4vw;
-    display: flex;
-    justify-content: space-between;
+.note{
+    width: 50vw;
+    text-align: center;
+    margin-left:23vw;
+    margin-top:2vw;
+    padding: 1vw;
+    border-radius: 20px;
+    font-size:12px;
+    background-color: #fcff65af;
 }
-
-#prev,
-#next {
-    width: 15vw;
-    height: 7vh;
-    border-radius: 2vw;
-    font-size: 20px;
-    background-color: #FF6565;
-    border: 2px solid #FFB800;
-    color: White;
-    cursor: pointer;
-}
-
 .cycles {
     display: flex;
     justify-content: space-between;
@@ -195,29 +186,29 @@ body {
     background-color: #fb2222;
     border: 2px solid #aaa800;
 }
+
 .menstrual-phase {
-    background-color: #fc3131 !important; 
+    background-color: #fc3131 !important;
     color: black !important;
-  }
-  
-  .follicular-phase {
+}
+
+.follicular-phase {
     background-color: #e1671a !important;
     color: black !important;
-  }
-  
-  .ovulation-phase {
-    background-color: #e0ba11 !important; 
+}
+
+.ovulation-phase {
+    background-color: #e0ba11 !important;
     color: black !important;
-  }
-  
-  .luteal-phase {
-    background-color: #1eb300 !important; 
+}
+
+.luteal-phase {
+    background-color: #1eb300 !important;
     color: black !important;
-  }
-  
+}
+
 .footer {
     margin-top: 5vw;
     background-color: black;
     color: white;
 }
-

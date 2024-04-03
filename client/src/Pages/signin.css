@@ -16,7 +16,7 @@
 .btns{
     display: flex;
     justify-content: space-between;
-    width:20vw;
+    width:23vw;
 }
 .home{
     margin-top:1vw;
@@ -61,7 +61,7 @@
 }
 
 .Sign{
-    margin:3.2vw 0vw 1vw 17vw;
+    margin:3.2vw 0vw 1vw 13vw;
 }
 #calendar{
     width:37vw;
@@ -69,8 +69,8 @@
 }
 .Signin{
     position:absolute;
-    top:10.75vw;
-    left:54vw;
+    top:9.2vw;
+    left:50vw;
     width:35vw;
     height:74.1vh;
     background-color: #c92b8acc;
