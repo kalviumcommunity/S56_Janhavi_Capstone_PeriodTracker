@@ -2,14 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const config = require('./config/db');
 const routes = require('./routes');
-require('dotenv').config(); // Load environment variables
-
+require('dotenv').config(); 
 const app = express();
 
 // MongoDB connection
 mongoose.connect(process.env.URI)
     .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error('MongoDB connection error:', err));
+    .catch(err => console.error('Database connection error:', err)); 
 
 // Middleware
 app.use(express.json());
