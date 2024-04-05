@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const activitySchema = new mongoose.Schema({
+const travel = new mongoose.Schema({
     image: String,
     phase: String,
     activity: String,
@@ -8,6 +8,6 @@ const activitySchema = new mongoose.Schema({
     addedBy: String
 });
 
-const Activity = mongoose.model('Activity', activitySchema);
+const Activity = mongoose.model('travel', travel);
 
 module.exports = Activity;
