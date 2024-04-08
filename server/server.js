@@ -5,14 +5,21 @@ const routes = require('./routes');
 require('dotenv').config(); 
 const app = express();
 const cors = require('cors');
-app.use(cors())
+
+const corsOptions = {
+  origin : 'http://localhost:5173',
+  methods : ["GET","POST","PUT","DELETE"],
+  allowedHeaders : ["Content-Type","Authorization"],
+  credentials : true
+};
+app.use(cors(corsOptions))
 
 // MongoDB connection
 mongoose.connect(process.env.URI)
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('Database connection error:', err)); 
 
-// Middleware
+// Middleware for parsing JSON
 app.use(express.json());
 
 // Routes

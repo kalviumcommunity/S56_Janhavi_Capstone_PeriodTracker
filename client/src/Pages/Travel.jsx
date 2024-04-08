@@ -10,7 +10,7 @@ function Travel() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/activity')
+    axios.get(' http://localhost:3000/activity')
       .then((result) => {
         setData(result.data)
       })

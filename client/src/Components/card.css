@@ -1,7 +1,4 @@
-*{
-    margin:0;
-    padding:0;
-}
+
 .cards{
     display: flex;
     justify-content: space-around;
