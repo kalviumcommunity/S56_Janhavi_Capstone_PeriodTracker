@@ -1,0 +1,40 @@
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+    font-family: "Katibeh", serif;
+}
+.card img{
+    width:25vw;
+    height:20vw;
+    margin-top:1vw;
+}
+.card{
+    width: 25vw;
+    height: 700px;
+    position: relative;
+    border:5px solid black;
+    border-radius:20px;
+    padding:10px;
+}
+.underlined{
+    text-decoration:underline 1.5px solid rgba(0, 0, 0, 0.634);
+}
+.card h1{
+    font-size:2vw;
+    font-weight:500;
+    margin-top:1vw;
+    text-align: center;
+}
+.card h4{
+    font-size:1.5vw;
+    font-weight:500;
+    margin-top:0.5vw;
+    margin-bottom:1.5vw;
+    text-align: center;
+}
+.card p{
+    font-size:1.25vw;
+    margin-top:0.5vw;
+    margin-left:2vw;
+}
