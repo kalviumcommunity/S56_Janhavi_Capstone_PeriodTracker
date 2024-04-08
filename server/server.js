@@ -4,6 +4,8 @@ const config = require('./config/db');
 const routes = require('./routes');
 require('dotenv').config(); 
 const app = express();
+const cors = require('cors');
+app.use(cors())
 
 // MongoDB connection
 mongoose.connect(process.env.URI)

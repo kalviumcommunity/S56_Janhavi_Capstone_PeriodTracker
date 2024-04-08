@@ -6,6 +6,7 @@ import Signin from './Pages/Signin';
 import Learnmore from './Pages/Learnmore';
 import Tracker from './Pages/Tracker';
 import Travel from './Pages/Travel';
+import Form from './Form';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/learnmore" element={<Learnmore />} />
         <Route path="/tracker" element={<Tracker/>}/>
-        <Route path="travel" element={<Travel/>}/>
+        <Route path="/travel" element={<Travel/>}/>
+        <Route path='/form' element={<Form/>}/>
       </Routes>
     </Router>
   );
