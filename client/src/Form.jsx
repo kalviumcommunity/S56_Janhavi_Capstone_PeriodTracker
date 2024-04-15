@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './form.css';
 import axios from 'axios';
 import Navbar from './Components/Navbar';
+import { useHistory } from 'react-router-dom'; 
 
 function Form() {
     const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ function Form() {
         benefits: '',
         createdby: '',
     });
+
+    const history = useHistory(); 
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -23,7 +26,7 @@ function Form() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://s56-janhavi-capstone-periodtracker.onrender.com/activity', formData);
+            await axios.post('http://localhost:3000/activity', formData);
             setFormData({
                 activity: '',
                 imageurl: '',
@@ -31,8 +34,11 @@ function Form() {
                 benefits: '',
                 createdby: '',
             });
+            alert('Activity added successfully!');
+            history.push('/travel'); 
         } catch (error) {
             console.error('Error submitting form:', error);
+            alert('Failed to add activity. Please try again.');
         }
     };
 

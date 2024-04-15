@@ -9,13 +9,18 @@ function Travel() {
   const phases = ["luteal", "menstrual", "ovulation", "follicular"];
   const [data, setData] = useState([]);
 
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/activity');
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   useEffect(() => {
-    axios.get(' http://localhost:3000/activity')
-      .then((result) => {
-        setData(result.data)
-      })
-      .catch(err => console.log(err))
-  }, []);
+    fetchData();
+  }, [fetchData]); 
 
   return (
     <div>
@@ -28,14 +33,14 @@ function Travel() {
         <label htmlFor="phaseSelect">Select Phase:</label>
         <select id="phaseSelect">
           {phases.map((phase, index) => (
-            <option id="option" key={index} value={phase}>
+            <option key={index} value={phase}>
               {phase}
             </option>
           ))}
         </select>
       </div>
       <div className="add">
-        <h4>To add the activities you like and feel fit the phase click on the add button below!</h4>
+        <h4>To add the activities you like and feel fit the phase, click on the add button below!</h4>
         <Link to='/form'><button id="form">Add</button></Link>
       </div>
       <div className="activities">
