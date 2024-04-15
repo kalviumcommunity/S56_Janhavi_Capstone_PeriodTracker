@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './form.css';
 import axios from 'axios';
 import Navbar from './Components/Navbar';
+import { useHistory } from 'react-router-dom'; 
 
 function Form() {
     const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ function Form() {
         benefits: '',
         createdby: '',
     });
+
+    const history = useHistory(); 
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -32,7 +35,7 @@ function Form() {
                 createdby: '',
             });
             alert('Activity added successfully!');
-            window.location.href = '/travel'; 
+            history.push('/travel'); 
         } catch (error) {
             console.error('Error submitting form:', error);
             alert('Failed to add activity. Please try again.');

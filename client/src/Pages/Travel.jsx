@@ -9,10 +9,6 @@ function Travel() {
   const phases = ["luteal", "menstrual", "ovulation", "follicular"];
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   const fetchData = async () => {
     try {
       const response = await axios.get('http://localhost:3000/activity');
@@ -21,6 +17,10 @@ function Travel() {
       console.error('Error fetching data:', error);
     }
   };
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]); 
 
   return (
     <div>
