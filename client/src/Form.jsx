@@ -23,7 +23,7 @@ function Form() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://s56-janhavi-capstone-periodtracker.onrender.com/activity', formData);
+            await axios.post('http://localhost:3000/activity', formData);
             setFormData({
                 activity: '',
                 imageurl: '',
@@ -31,8 +31,11 @@ function Form() {
                 benefits: '',
                 createdby: '',
             });
+            alert('Activity added successfully!');
+            window.location.href = '/travel'; 
         } catch (error) {
             console.error('Error submitting form:', error);
+            alert('Failed to add activity. Please try again.');
         }
     };
 

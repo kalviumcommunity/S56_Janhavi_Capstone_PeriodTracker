@@ -10,5 +10,23 @@ router.get('/activity', async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
+router.post('/activity', async (req, res) => {
+    const { activity, imageurl, phase, benefits, createdby } = req.body;
+
+    try {
+        const newActivity = new Activity({
+            activity,
+            imageurl,
+            phase,
+            benefits,
+            createdby,
+        });
+
+        await newActivity.save();
+        res.status(201).json(newActivity);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
 
 module.exports = router;
