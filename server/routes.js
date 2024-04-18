@@ -57,29 +57,31 @@ router.delete('/activity/:id', async (req, res) => {
 router.put('/activity/:id', async (req, res) => {
     const id = req.params.id;
     const { activity, imageurl, phase, benefits, createdby } = req.body;
-
-    try {
-        validateActivityData(req.body);
-
-        const updatedActivity = await Activity.findByIdAndUpdate(id, {
-            activity,
-            imageurl,
-            phase,
-            benefits,
-            createdby,
-        }, { new: true });
-
-        if (!updatedActivity) {
-            return res.status(404).json({ message: 'Activity not found' });
-        }
-
-        res.status(200).json(updatedActivity);
-    } catch (err) {
-        console.error('Error updating activity:', err.message);
-        res.status(400).json({ message: err.message });
+    
+    if (!activity || !imageurl || !phase || !benefits || !createdby) {
+      return res.status(400).json({ message: 'Missing required fields' });
     }
-});
-
-
+  
+    try {
+      validateActivityData(req.body);
+  
+      const updatedActivity = await Activity.findByIdAndUpdate(id, {
+        activity,
+        imageurl,
+        phase,
+        benefits,
+        createdby,
+      }, { new: true });
+  
+      if (!updatedActivity) {
+        return res.status(404).json({ message: 'Activity not found' });
+      }
+  
+      res.status(200).json(updatedActivity);
+    } catch (err) {
+      console.error('Error updating activity:', err.message);
+      res.status(400).json({ message: err.message });
+    }
+  });
 
 module.exports = router;

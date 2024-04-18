@@ -12,8 +12,17 @@ function Card(props) {
       setDeleted(true);
       alert('Activity deleted successfully!');
     } catch (error) {
-      console.error('Error deleting activity:', error);
-      alert('Error deleting activity. Please try again later.');
+      if (error.response) {
+        if (error.response.status === 404) {
+          console.log('Activity not found.');
+        } else if (error.response.status >= 500) {
+          alert('Server error. Please try again later.');
+        } else {
+          alert('Error deleting activity. Please try again later.');
+        }
+      } else {
+        alert('An error occurred. Please try again later.');
+      }
     }
   };
 
