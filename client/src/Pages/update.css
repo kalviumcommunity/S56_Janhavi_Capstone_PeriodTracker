@@ -1,0 +1,24 @@
+.updatehere{
+    padding:2vw;
+}
+.updatehere h1{
+    text-align: center;
+}
+.updateform{
+    width:35vw;
+    display: flex;
+    flex-direction: column;
+    margin-top:2vw;
+    margin-left:22vw;
+    padding-left:15vw;
+    background-color: rgba(253, 213, 213, 0.256);
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.436);
+}
+.updateform input{
+    width:20vw;
+    border:2px solid rgb(253, 170, 225);
+}
+#sub{
+    margin-bottom:2vw;
+    margin-left: 2.85vw;
+}

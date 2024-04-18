@@ -7,6 +7,7 @@ import Learnmore from './Pages/Learnmore';
 import Tracker from './Pages/Tracker';
 import Travel from './Pages/Travel';
 import Form from './Form';
+import Update from './Pages/Update';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/tracker" element={<Tracker/>}/>
         <Route path="/travel" element={<Travel/>}/>
         <Route path='/form' element={<Form/>}/>
+        <Route path="/update/:id" element={<Update />} />
       </Routes>
     </Router>
   );
