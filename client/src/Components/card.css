@@ -38,3 +38,42 @@
     margin-top:0.5vw;
     margin-left:2vw;
 }
+.updel{
+    margin:5vw 0vw 3vw 3vw;
+  
+}
+.updel button{
+    width:7vw;
+    height:5vh;
+    border-radius:10px;
+    font-size:15px;
+    border:none;
+    cursor: pointer;
+}
+#upd{
+    margin-right:5vw;
+    background-color: rgb(113, 253, 143);
+    border: 2px solid green;
+}
+#upd:hover{
+    background-color:rgb(8, 170, 43) ;
+    color:white;
+}
+#upd:active{
+    background-color: rgb(0, 255, 55);
+    border: 3px solid rgb(0, 71, 0);
+    color:white;
+}
+#del{
+    background-color: rgb(253, 113, 113);
+    border: 2px solid red;
+}
+#del:hover{
+    background-color:rgb(207, 3, 3) ;
+    color:white;
+}
+#del:active{
+    background-color: rgb(255, 0, 0);
+    border: 3px solid rgb(117, 0, 0);
+    color:white;
+}
