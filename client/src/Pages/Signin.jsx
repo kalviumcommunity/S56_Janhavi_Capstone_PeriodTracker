@@ -1,39 +1,68 @@
-import React from 'react'
-import Logo from '../assets/logo.png'
-import calendar from '../assets/logcalendar.webp'
-import "./signin.css"
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import Logo from '../assets/logo.png';
+import calendar from '../assets/logcalendar.webp';
+import "./signin.css";
+import { Link } from 'react-router-dom';
+import axios from 'axios'; 
 
 function Signin() {
+ 
+  const [username,setUsername] = useState("")
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("")
+  const [age,setAge] = useState("");
+  const formData = {
+    name: username,
+    email : email,
+    password: password,
+
+  }
+  
+  const handleSignUp = async () => {
+  
+      await axios.post('http://localhost:3000/signup', formData)
+      .then((res)=>{
+        alert(res.data)
+        
+      }).catch((err)=>{
+        console.log(err)
+      })
+     
+    
+  };
+
   return (
     <div>
-        <div className="nav">
-          <img src={Logo} alt="logo" id='logo'/>
-          <div className="btns">
-         <Link to='/'><button className='home'>Home</button></Link> 
-         <Link to='/login'><button className='log'>login</button></Link> 
-          </div>
+      <div className="navbar">
+        <img src={Logo} alt="logo" id='loggoo'/>
+        <div className="btns">
+          <Link to='/'><button className='homee'>Home</button></Link> 
+          <Link to='/login'><button className='log'>Login</button></Link> 
         </div>
-        <div className="Sign">
-          <img src={calendar} alt="calendar" id='calendar' />
-          <div className="Signin">
-            <p>Continue your journey to explore the world boldly with</p>
-            <h1>Ms Femmigo</h1>
-            <div className="username">
-             <label>Name:</label><input type="text"  />
-            </div>
-            <div className="pass">
-            <label>Password:</label><input/>
-            </div>
-            <div className="age">
-             <label>Age:</label><input type="number"/>
-            </div>
-            <button className='logbtn'>Sign-Up</button>
-            <p>If you are already signed in, please login!</p>
+      </div>
+      <div className="Sign">
+        <img src={calendar} alt="calendar" id='calendar' />
+        <div className="Signin">
+          <p>Continue your journey to explore the world boldly with</p>
+          <h1>Ms Femmigo</h1>
+          <div className="username">
+            <label>Name:</label>
+            <input type="text" name="name" value={formData.name} onChange={(e)=>setUsername(e.target.value)} />
           </div>
+          <div className="email">
+            <label>Email:</label>
+            <input type="email" name="email" value={formData.email} onChange={(e)=>setEmail(e.target.value)} />
+          </div>
+          <div className="pass">
+            <label>Password:</label>
+            <input type="password" name="password" value={formData.password} onChange={(e)=>setPassword(e.target.value)} />
+          </div>
+          <button className='logbutton' onClick={handleSignUp}>Sign-Up</button>
+          <p>If you are already signed in, please login!</p>
         </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Signin
+export default Signin;
