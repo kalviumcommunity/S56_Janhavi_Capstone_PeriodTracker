@@ -101,7 +101,6 @@ router.post('/signup', async (req, res) => {
             name: data.name,
             email: data.email,
             password: hashPass,
-            age: data.age,
         });
         await newUser.save();
         res.send('Congrats! You signed up successfully');
@@ -119,7 +118,7 @@ router.post('/login', async (req, res) => {
             return res.status(404).send('User not found. Please create an account.');
         }
 
-        const hashPasswordMatch = await bcrypt.compare(password, user.password);
+        const hashPasswordMatch = bcrypt.compare(password, user.password);
         if (hashPasswordMatch) {
             res.send('You logged in successfully!');
         } else {
