@@ -101,7 +101,6 @@ router.post('/signup', async (req, res) => {
             name: data.name,
             email: data.email,
             password: hashPass,
-            age: data.age,
         });
         await newUser.save();
         res.send('Congrats! You signed up successfully');
