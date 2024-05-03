@@ -118,7 +118,7 @@ router.post('/login', async (req, res) => {
             return res.status(404).send('User not found. Please create an account.');
         }
 
-        const hashPasswordMatch = bcrypt.compare(password, user.password);
+        const hashPasswordMatch = await bcrypt.compare(password, user.password);
         if (hashPasswordMatch) {
             res.send('You logged in successfully!');
         } else {
