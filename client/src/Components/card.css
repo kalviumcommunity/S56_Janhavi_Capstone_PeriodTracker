@@ -1,79 +1,95 @@
-
-.cards{
+.cards {
     display: flex;
     justify-content: space-around;
     font-family: "Katibeh", serif;
 }
-.card img{
-    width:25vw;
-    height:20vw;
-    margin-top:1vw;
+
+.card img {
+    width: 25vw;
+    height: 20vw;
+    margin-top: 1vw;
 }
-.card{
+
+.card {
     width: 25vw;
     height: 650px;
     position: relative;
-    border:5px solid black;
-    border-radius:20px;
-    padding:10px;
+    border-radius: 20px;
+    padding: 10px;
+    transition: box-shadow 0.3s ease; 
 }
-.underlined{
-    text-decoration:underline 1.5px solid rgba(0, 0, 0, 0.634);
+
+.card:hover {
+    box-shadow: 4px 4px 5px 5px rgba(117, 116, 116, 0.837);
 }
-.card h1{
-    font-size:2vw;
-    font-weight:500;
-    margin-top:1vw;
+
+.underlined {
+    text-decoration: underline 1.5px solid rgba(0, 0, 0, 0.634);
+}
+
+.card h1 {
+    font-size: 2vw;
+    font-weight: 500;
+    margin-top: 1vw;
     text-align: center;
 }
-.card h4{
-    font-size:1.5vw;
-    font-weight:500;
-    margin-top:0.5vw;
-    margin-bottom:1.5vw;
+
+.card h4 {
+    font-size: 1.5vw;
+    font-weight: 500;
+    margin-top: 0.5vw;
+    margin-bottom: 1.5vw;
     text-align: center;
 }
-.card p{
-    font-size:1.25vw;
-    margin-top:0.5vw;
-    margin-left:2vw;
+
+.card p {
+    font-size: 1.25vw;
+    margin-top: 0.5vw;
+    margin-left: 2vw;
 }
-.updel{
-    margin:3vw 0vw 3vw 3vw;
-  
+
+.updel {
+    margin: 3vw 0vw 3vw 3vw;
 }
-.updel button{
-    width:7vw;
-    height:5vh;
-    border-radius:10px;
-    font-size:15px;
-    border:none;
+
+.updel button {
+    width: 7vw;
+    height: 5vh;
+    border-radius: 10px;
+    font-size: 15px;
+    border: none;
     cursor: pointer;
 }
-#upd{
-    margin-right:5vw;
+
+#upd {
+    margin-right: 5vw;
     background-color: rgb(211, 252, 220);
     border: 2px solid rgb(47, 72, 47);
 }
-#upd:hover{
-    background-color:rgba(1, 163, 39, 0.712) ;
-    color:white;
+
+#upd:hover {
+    background-color: rgba(1, 163, 39, 0.712);
+    color: white;
 }
-#upd:active{
+
+#upd:active {
     background-color: rgb(167, 255, 186);
     border: 3px solid rgb(0, 71, 0);
-    color:white;
+    color: white;
 }
-#del{
+
+#del {
     background-color: rgb(253, 204, 204);
     border: 2px solid rgb(98, 2, 2);
 }
-#del:hover{
-    background-color:rgba(192, 105, 105, 0.844) ;
-    color:white;
+
+#del:hover {
+    background-color: rgba(192, 105, 105, 0.844);
+    color: white;
 }
-#del:active{
+
+#del:active {
     background-color: rgb(252, 114, 114);
     border: 3px solid rgb(117, 0, 0);
-    color:white;
+    color: white;
 }
