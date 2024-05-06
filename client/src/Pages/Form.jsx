@@ -79,6 +79,7 @@ function Form() {
                         type="text"
                         name="benefits"
                         value={formData.benefits}
+                        
                         onChange={handleChange}
                     />
                 </label>

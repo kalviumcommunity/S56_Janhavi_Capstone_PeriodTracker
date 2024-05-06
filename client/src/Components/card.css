@@ -13,9 +13,12 @@
     width: 25vw;
     height: 650px;
     position: relative;
-    border:5px solid black;
     border-radius:20px;
     padding:10px;
+}
+.card:hover{
+    box-shadow: 4px 4px 5px 5px rgba(117, 116, 116, 0.837);
+
 }
 .underlined{
     text-decoration:underline 1.5px solid rgba(0, 0, 0, 0.634);
