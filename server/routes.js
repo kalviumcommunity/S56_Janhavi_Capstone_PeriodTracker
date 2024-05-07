@@ -3,14 +3,35 @@ const router = express.Router();
 const Activity = require('./models/activity');
 const Usermodel = require('./models/user');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
+require('dotenv').config();
+const secretKey = process.env.SECRET_KEY;
+
+// Middleware to validate activity data
 const validateActivityData = (data) => {
     if (!data.activity || !data.imageurl || !data.phase || !data.benefits || !data.createdby) {
         throw new Error('Missing required fields');
     }
 };
 
-router.get('/activity', async (req, res) => {
+// Middleware to verify JWT token
+const verifyToken = (req, res, next) => {
+    const token = req.header('Authorization');
+    if (!token) return res.status(401).send('Access denied. Token not provided.');
+
+    try {
+        const decoded = jwt.verify(token, secretKey);
+        req.user = decoded;
+        next();
+    } catch (error) {
+        console.error('Invalid token:', error.message);
+        res.status(400).send('Invalid token.');
+    }
+};
+
+// Get all activities
+router.get('/activity', verifyToken, async (req, res) => {
     try {
         const activities = await Activity.find();
         res.status(200).json(activities);
@@ -20,7 +41,8 @@ router.get('/activity', async (req, res) => {
     }
 });
 
-router.post('/activity', async (req, res) => {
+// Create a new activity
+router.post('/activity', verifyToken, async (req, res) => {
     const { activity, imageurl, phase, benefits, createdby } = req.body;
 
     try {
@@ -42,7 +64,8 @@ router.post('/activity', async (req, res) => {
     }
 });
 
-router.delete('/activity/:id', async (req, res) => {
+// Delete an activity by ID
+router.delete('/activity/:id', verifyToken, async (req, res) => {
     const id = req.params.id;
 
     try {
@@ -57,10 +80,11 @@ router.delete('/activity/:id', async (req, res) => {
     }
 });
 
-router.put('/activity/:id', async (req, res) => {
+// Update an activity by ID
+router.put('/activity/:id', verifyToken, async (req, res) => {
     const id = req.params.id;
     const { activity, imageurl, phase, benefits, createdby } = req.body;
-    
+
     if (!activity || !imageurl || !phase || !benefits || !createdby) {
         return res.status(400).json({ message: 'Missing required fields' });
     }
@@ -87,6 +111,7 @@ router.put('/activity/:id', async (req, res) => {
     }
 });
 
+// User signup route
 router.post('/signup', async (req, res) => {
     const data = req.body;
     try {
@@ -110,6 +135,7 @@ router.post('/signup', async (req, res) => {
     }
 });
 
+// User login route
 router.post('/login', async (req, res) => {
     const { name, password } = req.body;
     try {
@@ -120,7 +146,12 @@ router.post('/login', async (req, res) => {
 
         const hashPasswordMatch = await bcrypt.compare(password, user.password);
         if (hashPasswordMatch) {
-            res.send('You logged in successfully!');
+            console.log('User:', user); // Log the user data
+
+            // Update token payload to include unique identifier (e.g., email or ID)
+            const token = jwt.sign({ userId: user._id, email: user.email }, secretKey, { expiresIn: '1h' });
+            console.log('Token:', token); // Log the generated token
+            res.json({ token });
         } else {
             res.status(401).send('Incorrect password');
         }
