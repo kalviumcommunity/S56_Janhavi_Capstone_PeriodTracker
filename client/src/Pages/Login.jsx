@@ -19,7 +19,7 @@ function Login() {
       console.log('Response:', response.data); 
       const { token } = response.data; 
       Cookies.set('token', token, { expires: new Date(Date.now()+2103000) }); 
-      alert(`Token received: ${token}`); 
+      alert("Logged in Successfully!"); 
     } catch (error) {
       console.error('Error:', error); 
       alert('Error while logging in. Please try again.'); 

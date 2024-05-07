@@ -146,14 +146,11 @@ router.post('/login', async (req, res) => {
 
         const hashPasswordMatch = await bcrypt.compare(password, user.password);
         if (hashPasswordMatch) {
-            console.log('User:', user); // Log the user data
-
-            // Update token payload to include unique identifier (e.g., email or ID)
+            console.log('User:', user);
             const token = jwt.sign({ userId: user._id, email: user.email }, secretKey, { expiresIn: '1h' });
-            console.log('Token:', token); // Log the generated token
             res.json({ token });
         } else {
-            res.status(401).send('Incorrect password');
+            res.status(401).send('Incorrect password. Please try again.');
         }
     } catch (error) {
         console.error('Error while logging in:', error.message);
