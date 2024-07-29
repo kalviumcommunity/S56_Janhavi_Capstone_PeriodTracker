@@ -10,25 +10,22 @@ function Signin() {
   const [username,setUsername] = useState("")
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("")
-  const [age,setAge] = useState("");
+  
   const formData = {
     name: username,
-    email : email,
+    email: email,
     password: password,
-
   }
   
   const handleSignUp = async () => {
-  
-      await axios.post('http://localhost:3000/signup', formData)
-      .then((res)=>{
-        alert(res.data)
-        
-      }).catch((err)=>{
-        console.log(err)
-      })
-     
-    
+    try {
+      const response = await axios.post('https://s56-janhavi-capstone-periodtracker.onrender.com/signup', formData);
+      console.log('Response:', response.data);
+      alert(response.data);
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error while signing up. Please try again.');
+    }
   };
 
   return (
@@ -47,15 +44,15 @@ function Signin() {
           <h1>Ms Femmigo</h1>
           <div className="username">
             <label>Name:</label>
-            <input type="text" name="name" value={formData.name} onChange={(e)=>setUsername(e.target.value)} />
+            <input type="text" name="name" value={username} onChange={(e)=>setUsername(e.target.value)} />
           </div>
           <div className="email">
             <label>Email:</label>
-            <input type="email" name="email" value={formData.email} onChange={(e)=>setEmail(e.target.value)} />
+            <input type="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
           </div>
           <div className="pass">
             <label>Password:</label>
-            <input type="password" name="password" value={formData.password} onChange={(e)=>setPassword(e.target.value)} />
+            <input type="password" name="password" value={password} onChange={(e)=>setPassword(e.target.value)} />
           </div>
           <button className='logbutton' onClick={handleSignUp}>Sign-Up</button>
           <p>If you are already signed in, please login!</p>

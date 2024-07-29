@@ -111,6 +111,18 @@ router.put('/activity/:id', verifyToken, async (req, res) => {
     }
 });
 
+// Phase-specific routes
+router.get('/:phase', async (req, res) => {
+    const { phase } = req.params;
+    try {
+        const activities = await Activity.find({ phase });
+        res.status(200).json(activities);
+    } catch (err) {
+        console.error(`Error fetching activities for phase ${phase}:`, err.message);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
 // User signup route
 router.post('/signup', async (req, res) => {
     const data = req.body;

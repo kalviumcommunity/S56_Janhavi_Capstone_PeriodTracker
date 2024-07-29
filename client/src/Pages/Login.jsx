@@ -4,7 +4,7 @@ import calendar from '../assets/logcalendar.webp';
 import './login.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Cookies from 'js-cookie'; 
+import Cookies from 'js-cookie';
 
 function Login() {
   const [name, setName] = useState('');
@@ -12,17 +12,17 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/login', {
+      const response = await axios.post('https://s56-janhavi-capstone-periodtracker.onrender.com/login', {
         name,
         password,
       });
-      console.log('Response:', response.data); 
-      const { token } = response.data; 
-      Cookies.set('token', token, { expires: new Date(Date.now()+2103000) }); 
-      alert("Logged in Successfully!"); 
+      console.log('Response:', response.data);
+      const { token } = response.data;
+      Cookies.set('token', token, { expires: new Date(Date.now()+2103000) });
+      alert("Logged in Successfully!");
     } catch (error) {
-      console.error('Error:', error); 
-      alert('Error while logging in. Please try again.'); 
+      console.error('Error:', error);
+      alert('Error while logging in. Please try again.');
     }
   };
 

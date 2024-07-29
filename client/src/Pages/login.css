@@ -67,7 +67,7 @@
     border-radius: 2vw;
 }
 .name input{
- /* background-color: #FFAAD2; */
+ background-color: #FFAAD2;
  width:19vw;
  height:3vh;
  border-style: none;
@@ -76,7 +76,7 @@
     position: absolute;
     top:20.75vw;
     left:11vw;
-    /* background-color: #FFAAD2; */
+    background-color: #FFAAD2;
     width:18vw;
     height:3vh;
     border-style: none;

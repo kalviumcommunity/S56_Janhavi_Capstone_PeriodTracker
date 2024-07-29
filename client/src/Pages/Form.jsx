@@ -26,7 +26,7 @@ function Form() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3000/activity', formData);
+            await axios.post('https://s56-janhavi-capstone-periodtracker.onrender.com/activity', formData); // Updated URL here
             setFormData({
                 activity: '',
                 imageurl: '',
@@ -79,7 +79,6 @@ function Form() {
                         type="text"
                         name="benefits"
                         value={formData.benefits}
-                        
                         onChange={handleChange}
                     />
                 </label>
