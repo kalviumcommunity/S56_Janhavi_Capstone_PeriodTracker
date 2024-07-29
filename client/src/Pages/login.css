@@ -38,6 +38,7 @@
 }
 #calendar{
     width:37vw;
+    margin-top:-1vw
     box-shadow: 4px 4px 5px rgba(37, 36, 36, 0.827);
 }
 .login{
@@ -45,7 +46,7 @@
     top:9.95vw;
     left:54vw;
     width:35vw;
-    height:75vh;
+    height:80vh;
     background-color: #c92b8acc;
     box-shadow: 4px 4px 5px rgba(37, 36, 36, 0.827);
 }
