@@ -7,12 +7,11 @@ import { Link } from 'react-router-dom';
 
 function Travel() {
   const phases = ["luteal", "menstrual", "ovulation", "follicular"];
-  const [selectedPhase, setSelectedPhase] = useState('luteal'); // Default phase selection
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/activity?phase=${selectedPhase}`);
+      const response = await axios.get('http://localhost:3000/activity');
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -21,11 +20,7 @@ function Travel() {
 
   useEffect(() => {
     fetchData();
-  }, [selectedPhase]); // Fetch data when selectedPhase changes
-
-  const handlePhaseChange = (e) => {
-    setSelectedPhase(e.target.value);
-  };
+  }, []);
 
   return (
     <div>
@@ -36,7 +31,7 @@ function Travel() {
       </div>
       <div className="yourphase">
         <label htmlFor="phaseSelect">Select Phase:</label>
-        <select id="phaseSelect" value={selectedPhase} onChange={handlePhaseChange}>
+        <select id="phaseSelect">
           {phases.map((phase, index) => (
             <option key={index} value={phase}>
               {phase}
@@ -49,7 +44,7 @@ function Travel() {
         <Link to='/form'><button id="form">Add</button></Link>
       </div>
       <div className="activities">
-        <h3>Activities you can do according to your phase ({selectedPhase} phase).</h3>
+        <h3>Activities you can do according to your phase.</h3>
         <div className="allacts">
           {data.map((activity, index) => (
             <Card key={index} props={activity} />
