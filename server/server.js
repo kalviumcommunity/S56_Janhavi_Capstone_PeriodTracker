@@ -15,7 +15,10 @@ const corsOptions = {
 app.use(cors(corsOptions))
 
 // MongoDB connection
-mongoose.connect(process.env.URI)
+mongoose.connect(process.env.URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('Database connection error:', err)); 
 
