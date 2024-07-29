@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Activity = require('./models/activity');
 const Usermodel = require('./models/user');
-const bcrypt = require('bcrypt');
 
 // Middleware to validate activity data
 const validateActivityData = (data) => {
@@ -94,46 +93,48 @@ router.put('/activity/:id', async (req, res) => {
 
 // User signup route
 router.post('/signup', async (req, res) => {
-    const data = req.body;
+    const { name, email, password } = req.body;
+
     try {
-        const emailVerify = await Usermodel.findOne({ email: data.email });
+        // Check if the user already exists
+        const emailVerify = await Usermodel.findOne({ email });
         if (emailVerify) {
-            return res.status(400).send('User already exists!');
+            return res.status(400).json({ message: 'User already exists' });
         }
 
-        const salt = await bcrypt.genSalt(10);
-        const hashPass = await bcrypt.hash(data.password, salt);
         const newUser = new Usermodel({
-            name: data.name,
-            email: data.email,
-            password: hashPass,
+            name,
+            email,
+            password, // Storing password in plain text (not recommended)
         });
+
         await newUser.save();
-        res.send('Congrats! You signed up successfully');
+        res.status(201).json({ message: 'Congrats! You signed up successfully' });
     } catch (error) {
         console.error('Error while signing up:', error.message);
-        res.status(500).send('Error while signing up');
+        res.status(500).json({ message: 'Error while signing up' });
     }
 });
 
 // User login route
 router.post('/login', async (req, res) => {
-    const { name, password } = req.body;
+    const { email, password } = req.body;
+
     try {
-        const user = await Usermodel.findOne({ name });
+        const user = await Usermodel.findOne({ email });
         if (!user) {
-            return res.status(404).send('User not found. Please create an account.');
+            return res.status(404).json({ message: 'User not found. Please create an account.' });
         }
 
-        const hashPasswordMatch = await bcrypt.compare(password, user.password);
-        if (hashPasswordMatch) {
-            res.send('Login successful');
+        // Compare passwords in plain text (not secure)
+        if (user.password === password) {
+            res.status(200).json({ message: 'Login successful' });
         } else {
-            res.status(401).send('Incorrect password. Please try again.');
+            res.status(401).json({ message: 'Incorrect password. Please try again.' });
         }
     } catch (error) {
         console.error('Error while logging in:', error.message);
-        res.status(500).send('Error while logging in');
+        res.status(500).json({ message: 'Error while logging in' });
     }
 });
 
