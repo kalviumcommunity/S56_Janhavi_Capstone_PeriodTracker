@@ -74,13 +74,13 @@
     padding: 0.3vw 0.3vw 0.7vw 0.3vw;
 
 }
-.inptype{
+#inptype{
  background-color: #FFAAD2;
  width:18vw;
  height:3vh;
  border-style: none;
 }
-.passtype{
+#passtype{
     position: absolute;
     top:19.8vw;
     left:11vw;
