@@ -21,7 +21,8 @@ function Signin() {
     try {
       const response = await axios.post('https://s56-janhavi-capstone-periodtracker.onrender.com/signup', formData);
       console.log('Response:', response.data);
-      alert(response.data.message);
+      alert("Congrulations, You have signed up successfully!🎉");
+      window.location.href = '/';
     } catch (error) {
       console.error('Error:', error);
       alert('Error while signing up. Please try again.');
