@@ -38,7 +38,7 @@ function Login() {
           <h1>Ms Femmigo</h1>
           <div className="name">
             <label>Name:</label>
-            <input
+            <input  id='inptype'
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -46,7 +46,7 @@ function Login() {
           </div>
           <div className="password">
             <label>Password:</label>
-            <input
+            <input id='passtype'
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
