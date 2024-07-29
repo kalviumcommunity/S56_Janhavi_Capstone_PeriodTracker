@@ -31,7 +31,7 @@ function Login() {
           <button className="home">Home</button>
         </Link>
       </div>
-      <div className="form">
+      <div className="formlog">
         <img src={calendar} alt="calendar" id="calendar" />
         <div className="login">
           <p>Continue your journey to explore the world boldly with</p>
