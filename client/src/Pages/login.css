@@ -38,7 +38,7 @@
 }
 #calendar{
     width:37vw;
-    margin-top:-1vw
+    margin-top:-1vw;
     box-shadow: 4px 4px 5px rgba(37, 36, 36, 0.827);
 }
 .login{
