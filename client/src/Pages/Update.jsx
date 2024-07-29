@@ -17,7 +17,7 @@ function Update() {
 
     const fetchData = async () => {
       try {
-          const response = await axios.get(`http://localhost:3000/activity/${id}`);
+          const response = await axios.get(`https://s56-janhavi-capstone-periodtracker.onrender.com/activity/${id}`);
           setActivityData(response.data);
       } catch (error) {
           console.error('Error fetching data:', error);
