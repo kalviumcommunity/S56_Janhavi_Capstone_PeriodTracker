@@ -4,7 +4,6 @@ import calendar from '../assets/logcalendar.webp';
 import './login.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Cookies from 'js-cookie';
 
 function Login() {
   const [name, setName] = useState('');
@@ -17,8 +16,6 @@ function Login() {
         password,
       });
       console.log('Response:', response.data);
-      const { token } = response.data;
-      Cookies.set('token', token, { expires: new Date(Date.now()+2103000) });
       alert("Logged in Successfully!");
     } catch (error) {
       console.error('Error:', error);

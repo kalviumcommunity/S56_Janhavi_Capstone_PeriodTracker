@@ -3,10 +3,6 @@ const router = express.Router();
 const Activity = require('./models/activity');
 const Usermodel = require('./models/user');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-
-require('dotenv').config();
-const secretKey = process.env.SECRET_KEY;
 
 // Middleware to validate activity data
 const validateActivityData = (data) => {
@@ -15,23 +11,8 @@ const validateActivityData = (data) => {
     }
 };
 
-// Middleware to verify JWT token
-const verifyToken = (req, res, next) => {
-    const token = req.header('Authorization');
-    if (!token) return res.status(401).send('Access denied. Token not provided.');
-
-    try {
-        const decoded = jwt.verify(token, secretKey);
-        req.user = decoded;
-        next();
-    } catch (error) {
-        console.error('Invalid token:', error.message);
-        res.status(400).send('Invalid token.');
-    }
-};
-
 // Get all activities
-router.get('/activity', verifyToken, async (req, res) => {
+router.get('/activity', async (req, res) => {
     try {
         const activities = await Activity.find();
         res.status(200).json(activities);
@@ -42,7 +23,7 @@ router.get('/activity', verifyToken, async (req, res) => {
 });
 
 // Create a new activity
-router.post('/activity', verifyToken, async (req, res) => {
+router.post('/activity', async (req, res) => {
     const { activity, imageurl, phase, benefits, createdby } = req.body;
 
     try {
@@ -65,7 +46,7 @@ router.post('/activity', verifyToken, async (req, res) => {
 });
 
 // Delete an activity by ID
-router.delete('/activity/:id', verifyToken, async (req, res) => {
+router.delete('/activity/:id', async (req, res) => {
     const id = req.params.id;
 
     try {
@@ -81,7 +62,7 @@ router.delete('/activity/:id', verifyToken, async (req, res) => {
 });
 
 // Update an activity by ID
-router.put('/activity/:id', verifyToken, async (req, res) => {
+router.put('/activity/:id', async (req, res) => {
     const id = req.params.id;
     const { activity, imageurl, phase, benefits, createdby } = req.body;
 
@@ -108,18 +89,6 @@ router.put('/activity/:id', verifyToken, async (req, res) => {
     } catch (err) {
         console.error('Error updating activity:', err.message);
         res.status(400).json({ message: err.message });
-    }
-});
-
-// Phase-specific routes
-router.get('/:phase', async (req, res) => {
-    const { phase } = req.params;
-    try {
-        const activities = await Activity.find({ phase });
-        res.status(200).json(activities);
-    } catch (err) {
-        console.error(`Error fetching activities for phase ${phase}:`, err.message);
-        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -158,9 +127,7 @@ router.post('/login', async (req, res) => {
 
         const hashPasswordMatch = await bcrypt.compare(password, user.password);
         if (hashPasswordMatch) {
-            console.log('User:', user);
-            const token = jwt.sign({ userId: user._id, email: user.email }, secretKey, { expiresIn: '1h' });
-            res.json({ token });
+            res.send('Login successful');
         } else {
             res.status(401).send('Incorrect password. Please try again.');
         }

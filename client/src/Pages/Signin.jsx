@@ -19,7 +19,7 @@ function Signin() {
   
   const handleSignUp = async () => {
     try {
-      const response = await axios.post('https://s56-janhavi-capstone-periodtracker.onrender.com/signup', formData);
+      const response = await axios.post('http://localhost:3000/signup', formData);
       console.log('Response:', response.data);
       alert(response.data);
     } catch (error) {
