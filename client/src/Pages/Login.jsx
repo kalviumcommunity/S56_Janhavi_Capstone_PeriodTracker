@@ -16,7 +16,7 @@ function Login() {
         password,
       });
       console.log('Response:', response.data);
-      alert("Logged in Successfully!");
+      alert("Logged in Successfully!🎉");
     } catch (error) {
       console.error('Error:', error);
       alert('Error while logging in. Please try again.');
