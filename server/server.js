@@ -7,7 +7,7 @@ const app = express();
 const cors = require('cors');
 
 const corsOptions = {
-  origin : 'http://localhost:5173',
+  origin : 'https://msfemmigo.netlify.app',
   methods : ["GET","POST","PUT","DELETE"],
   allowedHeaders : ["Content-Type","Authorization"],
   credentials : true
@@ -15,10 +15,7 @@ const corsOptions = {
 app.use(cors(corsOptions))
 
 // MongoDB connection
-mongoose.connect(process.env.URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.URI)
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('Database connection error:', err)); 
 
