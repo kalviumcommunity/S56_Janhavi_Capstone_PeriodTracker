@@ -46,7 +46,7 @@
     top:9.95vw;
     left:54vw;
     width:35vw;
-    height:74.1vh;
+    height:78.3vh;
     background-color: #c92b8acc;
     box-shadow: 4px 4px 5px rgba(37, 36, 36, 0.827);
 }
@@ -74,7 +74,10 @@
     padding: 0.3vw 0.3vw 0.7vw 0.3vw;
 
 }
+
 #inptype{ 
+
+
  background-color: #FFAAD2;
  width:18vw;
  height:3vh;
