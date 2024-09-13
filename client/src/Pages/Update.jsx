@@ -15,14 +15,22 @@ function Update() {
         createdby: '',
     });
 
+    const [error, setError] = useState(null); 
+
     const fetchData = async () => {
-      try {
-          const response = await axios.get(`http://localhost:3000/activity/${id}`);
-          setActivityData(response.data);
-      } catch (error) {
-          console.error('Error fetching data:', error);
-      }
-  };
+        try {
+            const response = await axios.get(`http://localhost:3000/activity/${id}`);
+            if (response.status === 200) {
+                setActivityData(response.data);
+            } else {
+                setError('Failed to fetch activity data.');
+            }
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            setError('Error fetching data. Please try again later.');
+        }
+    };
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setActivityData({ ...activityData, [name]: value });
@@ -30,6 +38,11 @@ function Update() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!activityData.activity || !activityData.imageurl || !activityData.phase || !activityData.benefits || !activityData.createdby) {
+            alert('All fields are required.');
+            return;
+        }
 
         try {
             await axios.put(`http://localhost:3000/activity/${id}`, activityData);
@@ -43,13 +56,14 @@ function Update() {
 
     useEffect(() => {
         fetchData(); 
-    }, [id]); 
+    }, [id]);
 
     return (
         <div>
             <Navbar />
             <div className="updatehere">
                 <h1>Update your Activity here!</h1>
+                {error && <p className="error">{error}</p>}
                 <form className='updateform' onSubmit={handleSubmit}>
                     <label htmlFor="activity">Activity:</label>
                     <input
@@ -60,11 +74,11 @@ function Update() {
                         onChange={handleChange}
                     />
 
-                    <label htmlFor="imageURL">Image URL:</label>
+                    <label htmlFor="imageurl">Image URL:</label>
                     <input
                         type="text"
-                        id="imageURL"
-                name="imageurl"
+                        id="imageurl"
+                        name="imageurl"
                         value={activityData.imageurl}
                         onChange={handleChange}
                     />
@@ -87,10 +101,10 @@ function Update() {
                         onChange={handleChange}
                     />
 
-                    <label htmlFor="createdBy">Created By:</label>
+                    <label htmlFor="createdby">Created By:</label>
                     <input
                         type="text"
-                        id="createdBy"
+                        id="createdby"
                         name="createdby"
                         value={activityData.createdby}
                         onChange={handleChange}
