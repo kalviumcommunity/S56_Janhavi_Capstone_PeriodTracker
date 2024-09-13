@@ -73,14 +73,6 @@ function Update() {
             <Navbar />
             <div className="updatehere">
                 <h1>Update your Activity here!</h1>
-
-                {/* Display error if any */}
-                {error && <p className="error">{error}</p>}
-                
-                {/* Loading indicator */}
-                {loading ? (
-                    <p>Loading...</p>
-                ) : (
                     <form className='updateform' onSubmit={handleSubmit}>
                         <label htmlFor="activity">Activity:</label>
                         <input
