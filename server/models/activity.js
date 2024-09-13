@@ -8,6 +8,6 @@ const travelSchema = new mongoose.Schema({
     createdby: String
 });
 
-const Activity = mongoose.model('travel', travelSchema);
+const Activity = mongoose.model('travels', travelSchema);
 
 module.exports = Activity;

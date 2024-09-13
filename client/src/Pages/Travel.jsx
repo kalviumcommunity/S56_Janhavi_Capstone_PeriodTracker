@@ -11,7 +11,7 @@ function Travel() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/activity');
+      const response = await axios.get('https://s56-janhavi-capstone-periodtracker.onrender.com/activity');
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -20,7 +20,7 @@ function Travel() {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]); 
+  }, []);
 
   return (
     <div>

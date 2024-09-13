@@ -6,7 +6,7 @@ import Signin from './Pages/Signin';
 import Learnmore from './Pages/Learnmore';
 import Tracker from './Pages/Tracker';
 import Travel from './Pages/Travel';
-import Form from './Form';
+import Form from './Pages/Form'
 import Update from './Pages/Update';
 
 function App() {

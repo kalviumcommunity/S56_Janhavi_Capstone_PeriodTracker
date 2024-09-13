@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './form.css';
 import axios from 'axios';
-import Navbar from './Components/Navbar';
+import Navbar from '../Components/Navbar';
 import { useNavigate } from 'react-router-dom'; 
 
 function Form() {
@@ -26,7 +26,7 @@ function Form() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3000/activity', formData);
+            await axios.post('https://s56-janhavi-capstone-periodtracker.onrender.com/activity', formData);
             setFormData({
                 activity: '',
                 imageurl: '',
@@ -79,6 +79,7 @@ function Form() {
                         type="text"
                         name="benefits"
                         value={formData.benefits}
+                        
                         onChange={handleChange}
                     />
                 </label>

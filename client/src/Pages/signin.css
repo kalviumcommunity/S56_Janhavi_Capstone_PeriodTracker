@@ -4,12 +4,12 @@
     padding:0;
     margin:0;
 }
-.nav{
+.navbar{
     display: flex;
     justify-content: space-between;
     box-shadow: 4px 4px 5px rgba(60, 60, 60, 0.542);
 }
-#logo{
+#loggoo{
     width:16vw;
     margin: 0.5vw;
 }
@@ -18,7 +18,7 @@
     justify-content: space-between;
     width:23vw;
 }
-.home{
+.homee{
     margin-top:1vw;
     padding-bottom:0.65vw;
     width:7vw;
@@ -32,10 +32,10 @@
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.844);
     cursor: pointer;
 }
-.home:hover{
+.homee:hover{
     background-color: #d1034e;
 }
-.home:active{
+.homee:active{
     background-color: #ff015e;
 }
 .log{
@@ -69,10 +69,10 @@
 }
 .Signin{
     position:absolute;
-    top:9.2vw;
+    top:8.7vw;
     left:50vw;
     width:35vw;
-    height:74.1vh;
+    height:74.5vh;
     background-color: #c92b8acc;
     box-shadow: 4px 4px 5px rgba(37, 36, 36, 0.827);
 }
@@ -87,7 +87,7 @@
     font-family:  "Katibeh", serif;
     font-size:40px;
 }
-.username, .pass, .age{
+.username, .pass, .email{
     background-color:#FFAAD2;
     font-family:  "Poppins", sans-serif;
     margin:3vw 5vw 1vw 5vw;
@@ -96,13 +96,15 @@
     padding-bottom:0.5vw;
     border-radius: 2vw;
     font-size:10px;
+    width: 25vw;
+    height:5vh;
 }
-.username input, .pass input, .age input{
- background-color: #FFAAD2;
- border-style: none;
+.username input, .pass input, .email input{
+    background-color: #FFAAD2;
+    border:none;
 }
 
-.logbtn{
+.logbutton{
     margin-top:1vw;
     margin-left:12vw;
     padding-bottom:2.75vw;

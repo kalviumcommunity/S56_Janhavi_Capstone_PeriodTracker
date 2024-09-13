@@ -11,7 +11,7 @@
     margin-top:2vw;
     margin-left:22vw;
     padding-left:15vw;
-    background-color: rgba(253, 213, 213, 0.256);
+    background-color: #ff82d798;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.436);
 }
 .updateform input{
@@ -21,4 +21,9 @@
 #sub{
     margin-bottom:2vw;
     margin-left: 2.85vw;
+    background-color: #327297;
+}
+
+#sub:hover{
+    background-color: #28469f;
 }
