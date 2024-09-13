@@ -38,7 +38,10 @@ function Login() {
           <h1>Ms Femmigo</h1>
           <div className="name">
             <label>Name:</label>
+            <input id='inptype'
+
             <input  id='inptype'
+
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}

@@ -62,9 +62,9 @@
 }
 .name{
     background-color: #FFAAD2;
-    margin:5vw 5vw 1vw 3vw;
+    margin:5vw 5vw 0vw 3vw;
     padding-left:0.75vw;
-    padding-bottom:0.5vw;
+    padding-top:0.25vw;
     border-radius: 2vw;
 }
 .password{
@@ -74,7 +74,10 @@
     padding: 0.3vw 0.3vw 0.7vw 0.3vw;
 
 }
-#inptype{
+
+#inptype{ 
+
+
  background-color: #FFAAD2;
  width:18vw;
  height:3vh;
@@ -84,6 +87,7 @@
     position: absolute;
     top:19.8vw;
     left:11vw;
+    
     background-color: #FFAAD2;
     width:18vw;
     height:3vh;
