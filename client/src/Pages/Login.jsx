@@ -31,14 +31,14 @@ function Login() {
           <button className="home">Home</button>
         </Link>
       </div>
-      <div className="form">
+      <div className="formlog">
         <img src={calendar} alt="calendar" id="calendar" />
         <div className="login">
           <p>Continue your journey to explore the world boldly with</p>
           <h1>Ms Femmigo</h1>
           <div className="name">
             <label>Name:</label>
-            <input
+            <input id='inptype'
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -46,7 +46,7 @@ function Login() {
           </div>
           <div className="password">
             <label>Password:</label>
-            <input
+            <input id='passtype'
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}

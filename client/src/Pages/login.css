@@ -33,16 +33,17 @@
 .home:active{
     background-color: #ff015e;
 }
-.form{
+.formlog{
     margin:4.7vw 0vw 1vw 17vw;
 }
 #calendar{
     width:37vw;
+    margin-top:-1vw;
     box-shadow: 4px 4px 5px rgba(37, 36, 36, 0.827);
 }
 .login{
     position:absolute;
-    top:10.75vw;
+    top:9.95vw;
     left:54vw;
     width:35vw;
     height:74.1vh;
@@ -59,23 +60,31 @@
     font-family:  "Katibeh", serif;
     font-size:40px;
 }
-.name, .password{
+.name{
     background-color: #FFAAD2;
-    margin:5vw 5vw 1vw 3vw;
+    margin:5vw 5vw 0vw 3vw;
     padding-left:0.75vw;
-    padding-bottom:0.5vw;
+    padding-top:0.25vw;
     border-radius: 2vw;
 }
-.name input{
+.password{
+    background-color: #FFAAD2;
+    border-radius: 2vw;
+    margin:3vw 5vw 0vw 3vw;
+    padding: 0.3vw 0.3vw 0.7vw 0.3vw;
+
+}
+#inptype{ 
  background-color: #FFAAD2;
- width:19vw;
+ width:18vw;
  height:3vh;
  border-style: none;
 }
-.password input{
+#passtype{
     position: absolute;
-    top:20.75vw;
+    top:19.8vw;
     left:11vw;
+    
     background-color: #FFAAD2;
     width:18vw;
     height:3vh;
