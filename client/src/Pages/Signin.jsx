@@ -3,6 +3,7 @@ import Logo from '../assets/logo.png';
 import calendar from '../assets/logcalendar.webp';
 import "./signin.css";
 import { Link } from 'react-router-dom';
+import {GoogleLogin, GoogleOAuthProvider} from "@react-oauth/google";
 import axios from 'axios'; 
 
 function Signin() {
@@ -10,6 +11,8 @@ function Signin() {
   const [username,setUsername] = useState("")
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("")
+  const [isLogin, setisLogin] = useState(false)
+  const clientId = `485718509994-3ag531k8mpbnroo8f3qvsileehkr1gv5.apps.googleusercontent.com`
   
   const formData = {
     name: username,
@@ -28,6 +31,12 @@ function Signin() {
     }
   };
 
+  const onSuccess = (res) => {
+    console.log(`SignUp successful!🎉`)
+    alert(`Google SignUp successful!🎉`)
+    setisLogin(true);
+  }
+
   return (
     <div>
       <div className="navbar">
@@ -44,7 +53,7 @@ function Signin() {
           <h1>Ms Femmigo</h1>
           <div className="username">
             <label>Name:</label>
-            <input type="text" name="name" value={username} onChange={(e)=>setUsername(e.target.value)} />
+            <input type="text" value={username} onChange={(e)=>setUsername(e.target.value)} />
           </div>
           <div className="email">
             <label>Email:</label>
@@ -55,8 +64,14 @@ function Signin() {
             <input type="password" name="password" value={password} onChange={(e)=>setPassword(e.target.value)} />
           </div>
           <button className='logbutton' onClick={handleSignUp}>Sign-Up</button>
-          <p>If you are already signed in, please login!</p>
-        </div>
+          <p className='orr'>If you are already signed in, please login!</p>
+          </div>
+          <div className="google">
+            <GoogleOAuthProvider clientId={clientId}> 
+              <GoogleLogin onSuccess={onSuccess}/>
+            </GoogleOAuthProvider>
+          </div>
+        
       </div>
     </div>
   );
