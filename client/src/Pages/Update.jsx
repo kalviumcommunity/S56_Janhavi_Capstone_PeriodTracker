@@ -15,8 +15,8 @@ function Update() {
         createdby: '',
     });
     
-    const [error, setError] = useState(null);  // Error state
-    const [loading, setLoading] = useState(true);  // Loading state for fetching and submission
+    const [error, setError] = useState(null);  
+    const [loading, setLoading] = useState(true);  
     
     // Fetch data for activity
     const fetchData = async () => {
@@ -25,7 +25,7 @@ function Update() {
             const response = await axios.get(`https://s56-janhavi-capstone-periodtracker-2.onrender.com/activity/${id}`);
             if (response.status === 200) {
                 setActivityData(response.data);
-                setError(null);  // Clear any existing errors
+                setError(null);  
             } else {
                 setError('Failed to fetch activity data.');
             }
@@ -33,7 +33,7 @@ function Update() {
             console.error('Error fetching data:', error);
             setError('Error fetching data. Please try again later.');
         }
-        setLoading(false); // End loading after fetch attempt
+        setLoading(false); 
     };
 
     // Handle input field changes
@@ -61,7 +61,7 @@ function Update() {
             console.error('Error updating activity:', error);
             setError('Error updating activity. Please try again later.');
         }
-        setLoading(false); // End loading after submission attempt
+        setLoading(false); 
     };
 
     useEffect(() => {
@@ -73,14 +73,6 @@ function Update() {
             <Navbar />
             <div className="updatehere">
                 <h1>Update your Activity here!</h1>
-
-                {/* Display error if any */}
-                {error && <p className="error">{error}</p>}
-                
-                {/* Loading indicator */}
-                {loading ? (
-                    <p>Loading...</p>
-                ) : (
                     <form className='updateform' onSubmit={handleSubmit}>
                         <label htmlFor="activity">Activity:</label>
                         <input
