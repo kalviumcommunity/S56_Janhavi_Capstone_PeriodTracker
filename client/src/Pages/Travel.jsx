@@ -7,8 +7,12 @@ import { Link } from 'react-router-dom';
 
 function Travel() {
   const phases = ["luteal", "menstrual", "ovulation", "follicular"];
+  
+  // State to store fetched data and selected phase
   const [data, setData] = useState([]);
+  const [selectedPhase, setSelectedPhase] = useState(phases[0]);  // Default to the first phase
 
+  // Fetch data from API
   const fetchData = async () => {
     try {
       const response = await axios.get('https://s56-janhavi-capstone-periodtracker.onrender.com/activity');
@@ -22,6 +26,14 @@ function Travel() {
     fetchData();
   }, []);
 
+  // Function to handle phase selection
+  const handlePhaseChange = (event) => {
+    setSelectedPhase(event.target.value);
+  };
+
+  // Filter activities based on selected phase
+  const filteredActivities = data.filter(activity => activity.phase === selectedPhase);
+
   return (
     <div>
       <Navbar />
@@ -31,7 +43,7 @@ function Travel() {
       </div>
       <div className="yourphase">
         <label htmlFor="phaseSelect">Select Phase:</label>
-        <select id="phaseSelect">
+        <select id="phaseSelect" onChange={handlePhaseChange} value={selectedPhase}>
           {phases.map((phase, index) => (
             <option key={index} value={phase}>
               {phase}
@@ -46,9 +58,13 @@ function Travel() {
       <div className="activities">
         <h3>Activities you can do according to your phase.</h3>
         <div className="allacts">
-          {data.map((activity, index) => (
-            <Card key={index} props={activity} />
-          ))}
+          {filteredActivities.length > 0 ? (
+            filteredActivities.map((activity, index) => (
+              <Card key={index} props={activity} />
+            ))
+          ) : (
+            <p>No activities available for this phase.</p>
+          )}
         </div>
       </div>
     </div>

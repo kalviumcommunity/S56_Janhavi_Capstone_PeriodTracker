@@ -15,8 +15,8 @@ function Update() {
         createdby: '',
     });
     
-    const [error, setError] = useState(null);  // Error state
-    const [loading, setLoading] = useState(true);  // Loading state for fetching and submission
+    const [error, setError] = useState(null);  
+    const [loading, setLoading] = useState(true);  
     
     // Fetch data for activity
     const fetchData = async () => {
@@ -25,7 +25,7 @@ function Update() {
             const response = await axios.get(`https://s56-janhavi-capstone-periodtracker-2.onrender.com/activity/${id}`);
             if (response.status === 200) {
                 setActivityData(response.data);
-                setError(null);  // Clear any existing errors
+                setError(null);  
             } else {
                 setError('Failed to fetch activity data.');
             }
@@ -33,7 +33,7 @@ function Update() {
             console.error('Error fetching data:', error);
             setError('');
         }
-        setLoading(false); // End loading after fetch attempt
+        setLoading(false); 
     };
 
     // Handle input field changes
@@ -61,7 +61,7 @@ function Update() {
             console.error('Error updating activity:', error);
             setError('');
         }
-        setLoading(false); // End loading after submission attempt
+        setLoading(false); 
     };
 
     useEffect(() => {
@@ -121,7 +121,7 @@ function Update() {
 
                         <button type="submit" id='sub' disabled={loading}>Submit</button>
                     </form>
-                )}
+               
             </div>
         </div>
     );
