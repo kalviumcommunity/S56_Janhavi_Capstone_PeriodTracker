@@ -7,8 +7,8 @@ const app = express();
 const cors = require('cors');
 
 const corsOptions = {
-  origin : 'https://msfemmigo.netlify.app/',
-  methods : ["GET","POST","PUT","DELETE"],
+  origin : 'https://msfemmigo.netlify.app',
+  methods : ["GET","POST","PUT","DELETE"]
 };
 app.use(cors(corsOptions))
 
