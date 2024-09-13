@@ -69,20 +69,26 @@
 }
 .Signin{
     position:absolute;
-    top:8.7vw;
+    top:8vw;
     left:50vw;
     width:35vw;
-    height:74.5vh;
+    height:76.5vh;
     background-color: #c92b8acc;
     box-shadow: 4px 4px 5px rgba(37, 36, 36, 0.827);
 }
 .Signin p{
-    margin:2vw 1vw 0vw 1vw;
+    margin:2.8vw 1vw 0vw 1vw;
     font-size:27px;
     font-family:  "Katibeh", serif;
     text-align: center;
 }
+.orr{
+    position: absolute;
+    bottom: 10px;
+    left: 80px;
+}
 .Signin h1{
+    margin-bottom:-30px; 
     text-align: center;
     font-family:  "Katibeh", serif;
     font-size:40px;
@@ -124,4 +130,9 @@
 }
 .logbtn:active{
     background-color: #ff0404;
+}
+.google{
+    position: absolute;
+    top: 600px;
+    left: 930px;
 }
