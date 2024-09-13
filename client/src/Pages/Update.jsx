@@ -31,7 +31,7 @@ function Update() {
             }
         } catch (error) {
             console.error('Error fetching data:', error);
-            setError('Error fetching data. Please try again later.');
+            setError('');
         }
         setLoading(false); // End loading after fetch attempt
     };
@@ -59,7 +59,7 @@ function Update() {
             navigate('/travel');
         } catch (error) {
             console.error('Error updating activity:', error);
-            setError('Error updating activity. Please try again later.');
+            setError('');
         }
         setLoading(false); // End loading after submission attempt
     };
