@@ -6,11 +6,7 @@ require('dotenv').config();
 const app = express();
 const cors = require('cors');
 
-const corsOptions = {
-  origin : 'https://msfemmigo.netlify.app',
-  methods : ["GET","POST","PUT","DELETE"]
-};
-app.use(cors(corsOptions))
+app.use(cors())
 
 // MongoDB connection
 mongoose.connect(process.env.URI)

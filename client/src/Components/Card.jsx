@@ -8,7 +8,7 @@ function Card(props) {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`https://s56-janhavi-capstone-periodtracker.onrender.com/activity/${props.props._id}`);
+      await axios.delete(`http://localhost:3000/activity/${props.props._id}`);
       setDeleted(true);
       alert('Activity deleted successfully!');
     } catch (error) {
