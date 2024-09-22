@@ -1,7 +1,18 @@
 const express = require('express');
+const rateLimit = require('express-rate-limit');
 const router = express.Router();
 const Activity = require('./models/activity');
 const Usermodel = require('./models/user');
+
+// Rate limiter: maximum of 5 requests per IP per 15 minutes
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, 
+    max: 5, 
+    message: 'Too many requests, please try again later.',
+});
+
+// Apply the rate limiter to all routes
+router.use(limiter);
 
 // Middleware to validate activity data
 const validateActivityData = (data) => {
@@ -91,12 +102,11 @@ router.put('/activity/:id', async (req, res) => {
     }
 });
 
-// User signup route
-router.post('/signup', async (req, res) => {
+// User signup route with rate limiting
+router.post('/signup', limiter, async (req, res) => {
     const { name, email, password } = req.body;
 
     try {
-        // Check if the user already exists
         const emailVerify = await Usermodel.findOne({ email });
         if (emailVerify) {
             return res.status(400).json({ message: 'User already exists' });
@@ -105,7 +115,7 @@ router.post('/signup', async (req, res) => {
         const newUser = new Usermodel({
             name,
             email,
-            password, // Storing password in plain text (not recommended)
+            password,
         });
 
         await newUser.save();
