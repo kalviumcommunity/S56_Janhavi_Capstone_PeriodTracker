@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../Components/Navbar';
 import Calendar from 'react-calendar';
 import './tracker.css';
+import Footer from '../Components/Footer';
 
 function Tracker() {
   const [lastPeriodStart, setLastPeriodStart] = useState('');
@@ -131,9 +132,7 @@ function Tracker() {
           <Calendar onChange={handleCalendarChange} value={calendarDate} tileClassName={tileClassName} />
         </div>
       )}
-      <div className="footer">
-        <h3>Made By Janhavi ❤️</h3>
-      </div>
+     <Footer/>
     </div>
   );
 }

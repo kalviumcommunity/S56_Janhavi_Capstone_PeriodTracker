@@ -5,6 +5,7 @@ import craving from '../assets/craving.webp'
 import diseases from '../assets/diseases.jpg'
 import phases from '../assets/phases.jpg'
 import './learnmore.css'
+import Footer from '../Components/Footer'
 
 function Learnmore() {
   return (
@@ -88,9 +89,7 @@ function Learnmore() {
             <h1>Conclusion 👋🏼</h1>
             <p>It's important to note that not all women experience the same symptoms during each phase, and individual variations can occur based on factors like hormonal balance, overall health, and lifestyle. Tracking these phases can help individuals understand their bodies better and manage any associated symptoms more effectively.The menstrual cycle is a complex interplay of hormonal changes, physical symptoms, and emotional experiences. By understanding these aspects, individuals can better manage their menstrual health and well-being.</p>
         </div>
-        <div className="footer">
-            <h3>Made By Janhavi ❤️</h3>
-        </div>
+       <Footer/>
     </div>
   )
 }
