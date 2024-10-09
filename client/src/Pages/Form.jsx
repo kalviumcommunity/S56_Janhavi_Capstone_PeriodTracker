@@ -26,7 +26,7 @@ function Form() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3000/activity', formData);
+            await axios.post('https://s56-janhavi-capstone-periodtracker-2.onrender.com/activity', formData);
             setFormData({
                 activity: '',
                 imageurl: '',
