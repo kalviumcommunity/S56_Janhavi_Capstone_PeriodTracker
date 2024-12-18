@@ -22,7 +22,7 @@ function Update() {
     const fetchData = async () => {
         setLoading(true);
         try {
-            const response = await axios.get(`https://s56-janhavi-capstone-periodtracker-2.onrender.com/${id}`);
+            const response = await axios.get(`http://localhost:3000/${id}`);
             if (response.status === 200) {
                 setActivityData(response.data);
                 setError(null);  
@@ -54,7 +54,7 @@ function Update() {
 
         setLoading(true);
         try {
-            await axios.put(`https://s56-janhavi-capstone-periodtracker-2.onrender.com/${id}`, activityData);
+            await axios.put(`http://localhost:3000/${id}`, activityData);
             alert('Activity updated successfully!');
             navigate('/travel');
         } catch (error) {
