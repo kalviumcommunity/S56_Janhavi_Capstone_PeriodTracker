@@ -5,6 +5,7 @@
     margin:0;
 }
 .nav{
+    background-color: #ffffff;
     padding:0.25vw;
     display: flex;
     justify-content: space-between;

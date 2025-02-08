@@ -141,9 +141,6 @@ function Tracker() {
           />
         </div>
       )}
-      <div className="footer">
-        <h3>Made By Janhavi ❤️</h3>
-      </div>
     </div>
   );
 }

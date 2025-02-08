@@ -4,10 +4,39 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c92b8a;
+    padding: 1vw 3vw;
+    color: white;
+    font-size: 18px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1.5vw;
+    font-family: 'Lilita One', cursive;
+}
+
+.navbar a:hover {
+    color: #ffd700;
+    text-decoration: underline;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Playball", cursive;
 }
 
 .introduction {
@@ -17,11 +46,11 @@ body {
 
 .introduction h1 {
     font-family: "Playball", cursive;
-    font-size: 60px;
+    font-size: 45px;
 }
 
 .introduction p {
-    font-size: 23px;
+    font-size: 17px;
     margin-top: 1vw;
     margin-right: 2vw;
 }
@@ -47,9 +76,8 @@ body {
 .card1 h3,
 .card2 h3,
 .card3 h3 {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 550;
-    margin-bottom: 2vw;
 }
 
 .card1 input,
@@ -69,7 +97,7 @@ body {
     height: 7vh;
     border-radius: 2vw;
     font-family: 'Lilita One', sans-serif;
-    font-size: 25px;
+    font-size: 22px;
     background-color: #FF6565;
     border: 2px solid #FFB800;
     color: White;
@@ -87,27 +115,29 @@ body {
 }
 
 #cycle {
-    font-size: 55px;
+    font-size: 50px;
     font-family: "Abel", sans-serif;
     text-align: center;
     margin-top: 2vw;
     padding: 1vw;
     background-color: #FFE4E4;
 }
-.note{
+
+.note {
     width: 50vw;
     text-align: center;
-    margin-left:23vw;
-    margin-top:2vw;
+    margin-left: 23vw;
+    margin-top: 2vw;
     padding: 1vw;
     border-radius: 20px;
-    font-size:12px;
+    font-size: 12px;
     background-color: #fcff65af;
 }
+
 .cycles {
     display: flex;
     justify-content: space-between;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
     margin: 5vw 3vw 0vw 3vw;
 }
@@ -121,7 +151,7 @@ body {
 }
 
 .react-calendar {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .react-calendar__month-view__weekdays__weekday {
@@ -138,12 +168,12 @@ body {
     background-color: #c92b8a9d;
     color: white;
     font-family: 'Lilita One', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 0.5vw;
 }
 
 .react-calendar__navigation button {
-    font-size: 30px;
+    font-size: 28px;
     background-color: #bd719f00;
     border-style: none;
     padding: 1vw;
@@ -162,7 +192,7 @@ body {
 
 .react-calendar__tile {
     padding: 1vw;
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
 }
 
@@ -211,4 +241,6 @@ body {
     margin-top: 5vw;
     background-color: black;
     color: white;
+    text-align: center;
+    padding: 1.5vw;
 }

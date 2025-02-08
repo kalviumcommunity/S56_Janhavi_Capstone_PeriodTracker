@@ -1,7 +1,7 @@
-import React from 'react'
-import Navbar from '../Components/Navbar'
-import "../Pages/home.css"
-import image from "../assets/image.webp"
+import React from 'react';
+import Navbar from '../Components/Navbar';
+import "../Pages/home.css";
+import image from "../assets/image.webp";
 import aboutbg from "../assets/aboutbg.png";
 import blood from "../assets/blood.png";
 import chocolate from "../assets/chocolate.png";
@@ -11,19 +11,19 @@ import { Link } from 'react-router-dom';
 function Home() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div className="header">
-          <div className="image"><img src={image} width={830} alt="calendar"/></div>
-          <div className="slogan">
-          <p>Sync Your Cycle, Explore Your World</p> 
+        <div className="image"><img src={image} width={830} alt="calendar" /></div>
+        <div className="slogan">
+          <p>Sync Your Cycle, Explore Your World</p>
           <p>Ms. Femmigo Guides Your Journey!</p>
           <Link to='/signin'><button>Explore</button></Link>
-          </div>
+        </div>
       </div>
       <div className="aboutus">
-        <img src={aboutbg} width={1473}alt="women"/>
+        <img src={aboutbg} width={1473} alt="women" />
         <div className="text">
-          <p>The website is a special tool made just for women. It helps them keep track of their menstrual cycle. The website also helps women plan their trips and decide where to go based on which part of their menstrual cycle they're in. Women can enjoy their travels more and feel comfortable throughout. The tracker part of the website is like a calendar that remembers each woman's cycle, so they don't have to. It sends reminders before important phases start, making it easier to plan. </p>
+          <p>The website is a special tool made just for women. It helps them keep track of their menstrual cycle. The website also helps women plan their trips and decide where to go based on which part of their menstrual cycle they're in. Women can enjoy their travels more and feel comfortable throughout. The tracker part of the website is like a calendar that remembers each woman's cycle, so they don't have to. It sends reminders before important phases start, making it easier to plan.</p>
         </div>
       </div>
       <div className="cards">
@@ -31,39 +31,39 @@ function Home() {
           <h1>Period Symptoms</h1>
           <img src={blood} width={200} alt="blood" />
           <div className="symlist">
-          <p> 1.Menstrual Cramps </p>
-          <p> 2.Bloating </p>
-          <p> 3.Mood Swings </p>
-          <p> 4.Fatigue </p>
-          <p> 5.Headaches </p>
-          <p> 6.Breast Tenderness </p>
-          <p> 7.Acne </p>
-          <p> 8.Food Cravings </p>
-          <p> 9.Back Pain </p>
-          <p> 10.Nausea </p>  
+            <p> 1.Menstrual Cramps </p>
+            <p> 2.Bloating </p>
+            <p> 3.Mood Swings </p>
+            <p> 4.Fatigue </p>
+            <p> 5.Headaches </p>
+            <p> 6.Breast Tenderness </p>
+            <p> 7.Acne </p>
+            <p> 8.Food Cravings </p>
+            <p> 9.Back Pain </p>
+            <p> 10.Nausea </p>
           </div>
-            <Link to='/learnmore'><button className='learnMoresym'>Learn More</button></Link>
+          <Link to='/learnmore'><button className='learnMoresym'>Learn More</button></Link>
         </div>
         <div className="cravings">
-        <h1>Period Cravings</h1>
-        <img src={chocolate} width={200} alt="chocolate" />
+          <h1>Period Cravings</h1>
+          <img src={chocolate} width={200} alt="chocolate" />
           <div className="cravlist">
-          <p> 1.Chocolate </p>
-          <p> 2.Salty snacks </p>
-          <p> 3.Carbohydrates </p>
-          <p> 4.Sweets </p>
-          <p> 5.Fatty foods </p>
-          <p> 6.Dairy products </p>
-          <p> 7.Spicy foods </p>
-          <p> 8.Ice cream </p>
-          <p> 9.Pizza </p>
-          <p> 10.Cookies </p>
+            <p> 1.Chocolate </p>
+            <p> 2.Salty snacks </p>
+            <p> 3.Carbohydrates </p>
+            <p> 4.Sweets </p>
+            <p> 5.Fatty foods </p>
+            <p> 6.Dairy products </p>
+            <p> 7.Spicy foods </p>
+            <p> 8.Ice cream </p>
+            <p> 9.Pizza </p>
+            <p> 10.Cookies </p>
           </div>
           <Link to='/learnmore'><button className='learnMorecrav'>Learn More</button></Link>
         </div>
         <div className="disorders">
-        <h1>Period Disorders</h1>
-        <img src={pad} width={200} alt="sanitaryPad"/>
+          <h1>Period Disorders</h1>
+          <img src={pad} width={200} alt="sanitaryPad" />
           <div className="dislist">
             <p> 1.Dysmenorrhea </p>
             <p> 2.Amenorrhea </p>
@@ -79,11 +79,36 @@ function Home() {
         </div>
       </div>
       <div className="footer">
-        <p>Made By Janhavi ❤️</p>
+        <div className="footer-content">
+          <div className="footer-section">
+            <h3>Company Info</h3>
+            <p>123 Street Name, City, Country</p>
+            <p>Email: info@company.com</p>
+            <p>Phone: +123 456 789</p>
+          </div>
+          <div className="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+            </ul>
+          </div>
+          <div className="footer-section">
+            <h3>Follow Us</h3>
+            <ul className="social-links">
+              <li><a href="#" target="_blank"><i className="fab fa-facebook-f"></i> Facebook</a></li>
+              <li><a href="#" target="_blank"><i className="fab fa-twitter"></i> Twitter</a></li>
+              <li><a href="#" target="_blank"><i className="fab fa-instagram"></i> Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>&copy; 2025 Ms. Femmigo. All Rights Reserved.</p>
+        </div>
       </div>
-   
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;

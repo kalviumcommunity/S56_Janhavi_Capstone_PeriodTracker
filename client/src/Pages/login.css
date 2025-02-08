@@ -1,116 +1,129 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Katibeh&family=Playball&family=Poppins:wght@300&display=swap');
 
-*{
-    padding:0;
-    margin:0;
+* {
+    padding: 0;
+    margin: 0;
 }
-.nav{
+
+.nav {
     display: flex;
     justify-content: space-between;
     box-shadow: 4px 4px 5px rgba(60, 60, 60, 0.542);
 }
-#logo{
-    width:16vw;
+
+#logo {
+    width: 16vw;
     margin: 0.5vw;
 }
-.home{
-    margin:1.25vw 4vw 1.5vw 0vw;
-    padding-bottom:0.65vw;
-    width:7vw;
-    height:3vw;
-    border-radius:2vw;
+
+.home {
+    margin: 1.25vw 4vw 1.5vw 0;
+    padding-bottom: 0.65vw;
+    width: 7vw;
+    height: 3vw;
+    border-radius: 2vw;
     border-style: none;
     background-color: #C92B8A;
-    color:white;
-    font-size:30px;
+    color: white;
+    font-size: 24px; /* Reduced font size */
     font-family: "Katibeh", serif;
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.844);
     cursor: pointer;
 }
-.home:hover{
+
+.home:hover {
     background-color: #d1034e;
 }
-.home:active{
+
+.home:active {
     background-color: #ff015e;
 }
-.formlog{
-    margin:4.7vw 0vw 1vw 17vw;
+
+.formlog {
+    margin: 4.7vw 0 1vw 17vw;
 }
-#calendar{
-    width:37vw;
-    margin-top:-1vw;
+
+#calendar {
+    width: 37vw;
+    margin-top: -1vw;
     box-shadow: 4px 4px 5px rgba(37, 36, 36, 0.827);
 }
-.login{
-    position:absolute;
-    top:9.95vw;
-    left:54vw;
-    width:35vw;
-    height:78.3vh;
+
+.login {
+    position: absolute;
+    top: 9.95vw;
+    left: 54vw;
+    width: 35vw;
+    height: 78.3vh;
     background-color: #c92b8acc;
     box-shadow: 4px 4px 5px rgba(37, 36, 36, 0.827);
 }
-.login p, label{
-    margin:2vw 1vw 0vw 1vw;
-    font-size:27px;
-    font-family:  "Katibeh", serif;
+
+.login p, 
+.login label {
+    margin: 2vw 1vw 0 1vw;
+    font-size: 22px; /* Reduced font size */
+    font-family: "Katibeh", serif;
 }
-.login h1{
+
+.login h1 {
     text-align: center;
-    font-family:  "Katibeh", serif;
-    font-size:40px;
+    font-family: "Katibeh", serif;
+    font-size: 35px; /* Reduced font size */
 }
-.name{
+
+.name {
     background-color: #FFAAD2;
-    margin:5vw 5vw 0vw 3vw;
-    padding-left:0.75vw;
-    padding-top:0.25vw;
+    margin: 3vw 5vw 0 3vw; /* Reduced margin above */
+    padding-left: 0.75vw;
+    padding-top: 0.25vw;
     border-radius: 2vw;
 }
-.password{
+
+.password {
     background-color: #FFAAD2;
     border-radius: 2vw;
-    margin:3vw 5vw 0vw 3vw;
+    margin: 2vw 5vw 0 3vw; /* Reduced margin above */
     padding: 0.3vw 0.3vw 0.7vw 0.3vw;
-
 }
 
-#inptype{ 
-
-
- background-color: #FFAAD2;
- width:18vw;
- height:3vh;
- border-style: none;
-}
-#passtype{
-    position: absolute;
-    top:19.8vw;
-    left:11vw;
-    
+#inptype {
     background-color: #FFAAD2;
-    width:18vw;
-    height:3vh;
+    width: 18vw;
+    height: 3vh;
     border-style: none;
-   }
-.logbtn{
-    margin-top:5vw;
-    margin-left:12vw;
-    padding-bottom:2.75vw;
-    width:10vw;
-    height:4vh;
-    border-radius:2vw;
-    font-size: 26px;
-    font-family:  "Katibeh", serif;
+}
+
+#passtype {
+    position: absolute;
+    top: 18.5vw; /* Adjusted positioning to reduce spacing */
+    left: 11vw;
+    background-color: #FFAAD2;
+    width: 18vw;
+    height: 3vh;
+    border-style: none;
+}
+
+.logbtn {
+    margin-top: 3vw; /* Reduced margin above */
+    margin-left: 12vw;
+    padding-bottom: 2.75vw;
+    width: 10vw;
+    height: 4vh;
+    border-radius: 2vw;
+    font-size: 22px; /* Reduced font size */
+    font-family: "Katibeh", serif;
     border-style: none;
     background-color: #FF4646;
-    color:white;
+    color: white;
     box-shadow: 4px 4px 5px rgba(42, 42, 42, 0.827);
     cursor: pointer;
 }
-.logbtn:hover{
+
+.logbtn:hover {
     background-color: #c70404;
 }
-.logbtn:active{
+
+.logbtn:active {
     background-color: #ff0404;
 }
