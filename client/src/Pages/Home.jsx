@@ -17,7 +17,7 @@ function Home() {
         <div className="slogan">
           <p>Sync Your Cycle, Explore Your World</p>
           <p>Ms. Femmigo Guides Your Journey!</p>
-          <Link to='/signin'><button>Explore</button></Link>
+          <Link to='/tracker'><button>Explore</button></Link>
         </div>
       </div>
       <div className="aboutus">
